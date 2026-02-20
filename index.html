@@ -3,78 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prosty Remont - Andrzej Kornacki | Odbiory i Koordynacja</title>
+    <title>Prosty Remont - Andrzej Kornacki</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="theme-dark">
+
     <nav class="main-nav">
         <div class="brand">PROSTY<span>REMONT</span></div>
         <ul class="nav-links">
-            <li><a href="#odbiory">Odbiory</a></li>
-            <li><a href="#remonty">Koordynacja</a></li>
-            <li><a href="#awarie">Awarie</a></li>
-            <li><a href="#kontakt" class="btn-orange">Zadzwoń do Andrzeja</a></li>
+            <li><a href="#o-mnie">O mnie</a></li>
+            <li><a href="#oferta">Oferta</a></li>
+            <li><a href="#opinie">Opinie</a></li>
+            <li><a href="#materialy">Materiały</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
         </ul>
     </nav>
 
-    <section class="hero">
-        <h1>Andrzej Kornacki</h1>
-        <p class="subtitle">Ekspertyzy techniczne | Odbiory deweloperskie | Nadzór</p>
-        <div class="hero-cta">
-            <a href="#kontakt" class="btn-main">Umów termin</a>
-            <span class="badge-exp">15 lat w branży</span>
+    <header class="hero">
+        <div class="hero-content">
+            <h1>PROSTY <span>REMONT</span></h1>
+            <p class="subtitle">Andrzej Kornacki — Ekspert od odbiorów i remontów</p>
+            <div class="hero-btns">
+                <a href="#kontakt" class="btn-main">Umów termin</a>
+                <a href="tel:+48123456789" class="btn-call">
+                    <i class="fas fa-phone"></i> Zadzwoń do Andrzeja
+                </a>
+            </div>
         </div>
-    </section>
-    <section class="stats-bar">
-    <div class="stat-item"><strong>150+</strong> <span>Odebranych mieszkań</span></div>
-    <div class="stat-item"><strong>500k+</strong> <span>Zaoszczędzonych PLN</span></div>
-    <div class="stat-item"><strong>12 lat</strong> <span>W branży budowlanej</span></div>
-</section>
+    </header>
 
-<section id="uslugi" class="services-section">
-    <h2 class="section-title">W czym Ci <span>pomogę?</span></h2>
-    <div class="services-grid">
-        <div class="service-card">
-            <div class="icon">🔍</div>
-            <h3>Odbiory Deweloperskie</h3>
-            <p>Sprawdzam normy, kąty, tynki i instalacje. Znajduję usterki, za których naprawę zapłaci deweloper, nie Ty.</p>
+    <section class="stats-panel">
+        <div class="stat-card"><strong>200+</strong><span>Odbiory</span></div>
+        <div class="stat-card"><strong>50+</strong><span>Remonty</span></div>
+        <div class="stat-card"><strong>24/7</strong><span>Pogotowie Techniczne</span></div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="social-widgets">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
         </div>
-        <div class="service-card">
-            <div class="icon">🏗️</div>
-            <h3>Koordynacja Prac</h3>
-            <p>Pełny nadzór nad ekipami. Pilnuję terminów, jakości i Twojego budżetu. Remont bez stresu.</p>
+        <div class="footer-legal">
+            <p>&copy; 2026 Prosty Remont - Andrzej Kornacki</p>
+            <a href="#">Polityka Prywatności i RODO</a>
         </div>
-        <div class="service-card">
-            <div class="icon">🚨</div>
-            <h3>Pogotowie Techniczne</h3>
-            <p>Nagłe awarie, zalania, problemy z instalacją. Szybka diagnoza i konkretny plan naprawczy.</p>
-        </div>
+    </footer>
+
+    <div id="cookie-bar" class="cookie-notice">
+        <p>Strona korzysta z plików cookies. <button onclick="closeCookies()">Rozumiem</button></p>
     </div>
-</section>
-
-<section class="tools-section">
-    <div class="tools-content">
-        <h2>Nie zgaduję — <span>Mierzę</span></h2>
-        <p>W pracy korzystam z profesjonalnej aparatury pomiarowej, aby każda opinia była poparta twardymi danymi.</p>
-        <ul class="tools-list">
-            <li>✅ Kamera termowizyjna (mostki cieplne)</li>
-            <li>✅ Lasery krzyżowe (piony i poziomy)</li>
-            <li>✅ Wilgotnościomierze (badanie podłoży)</li>
-            <li>✅ Szczelinomierze i kątowniki budowlane</li>
-        </ul>
-    </div>
-</section>
-
-    <section id="odbiory" style="padding: 100px 8%; background: #1e1e1e;">
-        <h2>Odbiory <span>Deweloperskie</span></h2>
-        <p>Tutaj pojawi się galeria Twoich znalezisk z budów.</p>
-    </section>
-
-    <section id="awarie" style="padding: 100px 8%;">
-        <h2>Pogotowie <span>Techniczne</span></h2>
-        <p>Szybka pomoc w nagłych usterkach.</p>
-    </section>
 
     <script src="js/galeria.js"></script>
+    <script>
+        function closeCookies() {
+            document.getElementById('cookie-bar').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
