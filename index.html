@@ -23,43 +23,58 @@
     <header class="hero">
         <div class="hero-content">
             <h1>PROSTY <span>REMONT</span></h1>
-            <p class="subtitle">Andrzej Kornacki — Ekspert od odbiorów i remontów</p>
+            <div class="oferta-hasla">
+                <span>Odbiory deweloperskie</span> • 
+                <span>Koordynacja remontów</span> • 
+                <span>Audyty techniczne</span>
+            </div>
             <div class="hero-btns">
-                <a href="#kontakt" class="btn-main">Umów termin</a>
-                <a href="tel:+48123456789" class="btn-call">
+                <button class="btn-main" onclick="openModal()">Umów termin</button>
+                <a href="tel:+48576601776" class="btn-call">
                     <i class="fas fa-phone"></i> Zadzwoń do Andrzeja
                 </a>
             </div>
         </div>
     </header>
 
-    <section class="stats-panel">
-        <div class="stat-card"><strong>200+</strong><span>Odbiory</span></div>
-        <div class="stat-card"><strong>50+</strong><span>Remonty</span></div>
-        <div class="stat-card"><strong>24/7</strong><span>Pogotowie Techniczne</span></div>
+    <section id="o-mnie" class="stats-panel">
+        <div class="stat-card">
+            <strong>150+</strong>
+            <span>Remonty</span>
+        </div>
+        <div class="stat-card">
+            <strong>200+</strong>
+            <span>Odbiory</span>
+        </div>
+        <div class="stat-card">
+            <strong><i class="fas fa-tools"></i></strong>
+            <span>Awarie i usterki</span>
+        </div>
     </section>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Zgłoś chęć kontaktu</h2>
+            <p>Zostaw dane, odezwę się wkrótce.</p>
+            <form id="contact-form">
+                <input type="text" placeholder="Imię i Nazwisko" required>
+                <input type="tel" placeholder="Numer telefonu" required>
+                <input type="email" placeholder="Adres E-mail" required>
+                <button type="submit" class="btn-main">Wyślij zgłoszenie</button>
+            </form>
+        </div>
+    </div>
 
     <footer class="main-footer">
         <div class="social-widgets">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/prosty_remont/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/kornacki.remonty/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@prosty_remont_ak?_t=ZN-90NLr3NUnIM&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
         </div>
-        <div class="footer-legal">
-            <p>&copy; 2026 Prosty Remont - Andrzej Kornacki</p>
-            <a href="#">Polityka Prywatności i RODO</a>
-        </div>
+        <p>&copy; 2026 Prosty Remont - Andrzej Kornacki | <a href="#">Polityka Cookies & RODO</a></p>
     </footer>
 
-    <div id="cookie-bar" class="cookie-notice">
-        <p>Strona korzysta z plików cookies. <button onclick="closeCookies()">Rozumiem</button></p>
-    </div>
-
     <script src="js/galeria.js"></script>
-    <script>
-        function closeCookies() {
-            document.getElementById('cookie-bar').style.display = 'none';
-        }
-    </script>
 </body>
 </html>
