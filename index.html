@@ -29,47 +29,44 @@
                 <span>Audyty techniczne</span>
             </div>
             <div class="hero-btns">
-                <button class="btn-main" onclick="openModal()">Umów termin</button>
+                <a href="#kontakt" class="btn-main">Umów termin</a>
                 <a href="tel:+48576601776" class="btn-call">
-                    <i class="fas fa-phone"></i> Zadzwoń do Andrzeja
+                    <i class="fas fa-phone"></i> 576 601 776
                 </a>
             </div>
         </div>
     </header>
 
     <section id="o-mnie" class="stats-panel">
-        <div class="stat-card">
-            <strong>150+</strong>
-            <span>Remonty</span>
-        </div>
-        <div class="stat-card">
-            <strong>200+</strong>
-            <span>Odbiory</span>
-        </div>
-        <div class="stat-card">
-            <strong><i class="fas fa-tools"></i></strong>
-            <span>Awarie i usterki</span>
-        </div>
+        <div class="stat-card"><strong>150+</strong><span>Remonty</span></div>
+        <div class="stat-card"><strong>200+</strong><span>Odbiory</span></div>
+        <div class="stat-card"><strong><i class="fas fa-tools"></i></strong><span>Awarie i usterki</span></div>
     </section>
 
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
+    <section id="kontakt" class="contact-section">
+        <div class="contact-container">
             <h2>Zgłoś chęć kontaktu</h2>
-            <p>Zostaw dane, odezwę się wkrótce.</p>
-            <form id="contact-form">
-                <input type="text" placeholder="Imię i Nazwisko" required>
-                <input type="tel" placeholder="Numer telefonu" required>
-                <input type="email" placeholder="Adres E-mail" required>
+            <p>Zostaw swoje dane, a odezwę się w najbliższym możliwym terminie.</p>
+            
+            <form id="main-contact-form">
+                <div class="input-group">
+                    <input type="text" placeholder="Imię i Nazwisko" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" placeholder="Numer telefonu" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder="Adres E-mail" required>
+                </div>
                 <button type="submit" class="btn-main">Wyślij zgłoszenie</button>
             </form>
         </div>
-    </div>
+    </section>
 
     <footer class="main-footer">
         <div class="social-widgets">
-            <a href="https://www.instagram.com/prosty_remont/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.facebook.com/kornacki.remonty/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/prosty_remont/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.tiktok.com/@prosty_remont_ak?_t=ZN-90NLr3NUnIM&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
         </div>
         <p>&copy; 2026 Prosty Remont - Andrzej Kornacki | <a href="#">Polityka Cookies & RODO</a></p>
