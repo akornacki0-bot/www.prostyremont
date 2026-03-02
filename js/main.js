@@ -17,17 +17,12 @@
     const panel = getPanel(name);
     if (!panel) return;
 
-    // przełącz aktywną zakładkę
     panels.forEach(p => p.classList.toggle("is-active", p === panel));
 
-    // przewiń na górę nowej zakładki
     const scroller = panel.querySelector(".panel__scroll");
-    if (scroller) scroller.scrollTo({ top: 0, behavior: "instant" });
+    if (scroller) scroller.scrollTo({ top: 0, behavior: "auto" }); // ✅ zamiast "instant"
 
-    // ustaw hash w URL (żeby działało odświeżenie / link)
-    if (pushHash) {
-      history.replaceState(null, "", `#${name}`);
-    }
+    if (pushHash) history.replaceState(null, "", `#${name}`);
 
     closeMenu();
   };
@@ -51,12 +46,11 @@
   });
 
   // start z hash
-  const initial = (location.hash || "#start").replace("#", "");
+  const initial = (location.hash || "#start").slice(1);
   openPanel(initial, { pushHash: false });
 
-  // reakcja na ręczną zmianę hasha
   window.addEventListener("hashchange", () => {
-    const name = (location.hash || "#start").replace("#", "");
+    const name = (location.hash || "#start").slice(1);
     openPanel(name, { pushHash: false });
   });
 })();
