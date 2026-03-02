@@ -4,6 +4,7 @@
   --muted:#A0A0A0;
   --acc:#FF8C00;
   --line:rgba(255,255,255,.10);
+  --hdrH: 64px; /* ✅ domyślnie, JS ustawi dokładnie */
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -12,8 +13,10 @@ body{
   font-family: system-ui, -apple-system, "Segoe UI", Verdana, Arial, sans-serif;
   background: var(--bg);
   color: var(--txt);
-  overflow-x:hidden;
-  height: 100vh; /* ważne dla paneli */
+
+  height: 100vh;     /* zostaje */
+  overflow: hidden;  /* 🔥 KLUCZ: blokuje scroll całej strony */
+  margin: 0;         /* na wszelki wypadek */
 }
 
 a{color:inherit}
@@ -21,7 +24,7 @@ a{color:inherit}
 
 /* ===== HEADER ===== */
 .hdr{
-  position:sticky; top:0; z-index:1000;
+  position:fixed; top:0; left:0; right:0; z-index:1000;
   background: rgba(18,18,18,.88);
   backdrop-filter: blur(10px);
   border-bottom:1px solid var(--line);
@@ -43,7 +46,7 @@ a{color:inherit}
   font-weight: 950;
   letter-spacing: .08em;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: clamp(20px, 2.4vw, 34px); /* ✅ duże i responsywne */
 }
 .brand__sub{
   color: #fff;
@@ -86,8 +89,13 @@ a{color:inherit}
 
 /* ===== APP = zakładki jako panele (bez przewijania dalej) ===== */
 .app{
-  height: calc(100vh - 58px); /* dopasowane pod header */
-  overflow: hidden;           /* blokuje przewijanie całej strony */
+  position: fixed;
+  top: var(--hdrH);
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  overflow: hidden; /* zostaje */
 }
 
 /* każdy panel to osobna zakładka */
@@ -124,7 +132,7 @@ a{color:inherit}
 .pdfimg{
   display:block;
   max-width: min(1100px, 96vw);
-  max-height: calc(100vh - 58px - 40px);
+  max-height: calc(100vh - var(--hdrH) - 40px);
   width:auto;
   height:auto;
   object-fit: contain;
@@ -148,7 +156,7 @@ a{color:inherit}
 @media (max-width: 520px){
   .pdfimg{
     max-width: 96vw;
-    max-height: calc(100vh - 58px - 20px);
+    max-height: calc(100vh - var(--hdrH) - 20px);
     border-radius: 10px;
   }
 }
