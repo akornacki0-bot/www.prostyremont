@@ -1,77 +1,428 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prosty Remont | Odbiory deweloperskie i audyty techniczne</title>
-    <meta name="description" content="Odbiory mieszkań od dewelopera, koordynacja remontów, audyty techniczne. Profesjonalnie i bez komplikacji.">
-    
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prosty Remont — Andrzej Kornacki | Odbiory, remonty, audyty</title>
+  <meta name="description" content="Prosty Remont — Andrzej Kornacki. Odbiory deweloperskie, koordynacja prac, pogotowie techniczne. Nie zgaduję — mierzę. Umów termin." />
+  <meta name="theme-color" content="#121212" />
+
+  <!-- Open Graph (opcjonalnie, ale warto) -->
+  <meta property="og:title" content="Prosty Remont — Andrzej Kornacki" />
+  <meta property="og:description" content="Konkretnie. Technicznie. Godny zaufania. Odbiory, remonty, audyty." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
+  <!-- Skip link -->
+  <a class="skip-link" href="#main">Przejdź do treści</a>
 
-<header>
-    <div class="container nav">
-        <div class="logo">PROSTY REMONT</div>
+  <!-- Header / Sticky Nav -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Prosty Remont — start">
+        <span class="brand__prosty">PROSTY</span>
+        <span class="brand__remont">REMONT</span>
+        <span class="brand__sub">Andrzej Kornacki</span>
+      </a>
 
-        <button class="hamburger" id="hamburger">
-            ☰
-        </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
 
-        <nav id="navMenu">
-            <a href="#about">O mnie</a>
-            <a href="#offer">Oferta</a>
-            <a href="#reviews">Opinie</a>
-            <a href="#materials">Materiały</a>
-            <a href="#contact">Kontakt</a>
-        </nav>
+      <nav class="nav" id="nav">
+        <a class="nav__link" href="#o-mnie">O mnie</a>
+        <a class="nav__link" href="#oferta">Oferta</a>
+        <a class="nav__link" href="#opinie">Opinie</a>
+        <a class="nav__link" href="#materialy">Materiały</a>
+        <a class="nav__link nav__cta" href="#kontakt">Umów termin</a>
+      </nav>
     </div>
-</header>
+  </header>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>PROSTY REMONT</h1>
-        <p>Odbiory deweloperskie • Koordynacja remontów • Audyty techniczne</p>
-        <a href="tel:576601776" class="btn">📞 576 601 776</a>
-    </div>
-</section>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top" aria-label="Sekcja główna">
+      <div class="hero__bg" role="img" aria-label="Tło: plan budowlany i prace techniczne"></div>
+      <div class="hero__overlay"></div>
 
-<section id="about" class="section">
-    <div class="container">
-        <h2>O mnie</h2>
-        <p>Pomagam w bezproblemowym odbiorze mieszkań i prowadzeniu remontów. Stawiam na jakość, przejrzystość i rzetelność wykonania.</p>
-    </div>
-</section>
+      <div class="container hero__content">
+        <p class="hero__kicker">Odbiory deweloperskie • Koordynacja prac • Audyty techniczne</p>
 
-<section id="offer" class="section light">
-    <div class="container">
-        <h2>Oferta</h2>
-        <ul class="offer-list">
-            <li>Odbiory mieszkań od dewelopera</li>
-            <li>Koordynacja remontów</li>
-            <li>Audyty techniczne</li>
-        </ul>
-    </div>
-</section>
+        <h1 class="hero__title">
+          <span class="hero__title--prosty">PROSTY</span>
+          <span class="hero__title--remont">REMONT</span>
+        </h1>
 
-<section id="contact" class="section">
-    <div class="container">
-        <h2>Kontakt</h2>
-        <p>Zadzwoń i umów termin:</p>
-        <a href="tel:576601776" class="btn">📞 576 601 776</a>
-    </div>
-</section>
+        <p class="hero__lead">
+          Konkretnie. Technicznie. Bez zgadywania. <span class="accent">Mierzę</span> i raportuję.
+        </p>
 
-<footer>
-    <div class="container">
-        © 2026 Prosty Remont
-    </div>
-</footer>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#kontakt">
+            Umów termin
+            <span class="btn__icon" aria-hidden="true">→</span>
+          </a>
 
-<script src="js/galeria.js" defer></script>
-<script src="js/main.js" defer></script>
+          <a class="btn btn--ghost" href="tel:576601776" aria-label="Zadzwoń 576 601 776">
+            <span class="btn__icon" aria-hidden="true">📞</span>
+            576&nbsp;601&nbsp;776
+          </a>
+        </div>
 
+        <div class="hero__trust">
+          <div class="trust">
+            <div class="trust__item">
+              <div class="trust__value" data-counter="150">0</div>
+              <div class="trust__label">Remonty</div>
+            </div>
+            <div class="trust__item">
+              <div class="trust__value" data-counter="200">0</div>
+              <div class="trust__label">Odbiory</div>
+            </div>
+            <div class="trust__item">
+              <div class="trust__icon" aria-hidden="true">
+                <!-- prosta ikonka narzędzi -->
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                  <path d="M14.7 6.3a4 4 0 0 0-5.66 5.66l7.07 7.07a2 2 0 0 0 2.83-2.83l-7.07-7.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M12 2a6 6 0 0 0 7.74 7.74" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="trust__label">Awarie i usterki</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- O mnie -->
+    <section class="section section--dark" id="o-mnie">
+      <div class="container grid grid--2">
+        <div>
+          <h2 class="h2">O mnie</h2>
+          <p class="muted">
+            Nazywam się <strong>Andrzej Kornacki</strong>. Pomagam klientom odbierać mieszkania od dewelopera,
+            koordynować remonty i szybko diagnozować usterki. Pracuję technicznie — mówię wprost co jest OK,
+            co wymaga poprawy i jak to udokumentować.
+          </p>
+
+          <ul class="bullets">
+            <li>Checklisty + protokół usterek</li>
+            <li>Priorytety napraw i realne koszty</li>
+            <li>Komunikacja z wykonawcami bez chaosu</li>
+          </ul>
+
+          <div class="note">
+            <div class="note__title">Industrial Dark • Styl ekspercki</div>
+            <div class="note__text">W tej stronie wszystko jest podporządkowane czytelności i zaufaniu.</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3 class="h3">W skrócie</h3>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat__num"><span class="accent">150+</span></div>
+              <div class="stat__label">zrealizowanych remontów</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num"><span class="accent">200+</span></div>
+              <div class="stat__label">odbiorów deweloperskich</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num"><span class="accent">24/7</span></div>
+              <div class="stat__label">pogotowie techniczne (po ustaleniu)</div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <p class="muted">
+            Chcesz ocenić mieszkanie przed podpisaniem protokołu? Zrobimy to konkretnie — z pomiarami i dokumentacją.
+          </p>
+
+          <a class="btn btn--primary btn--block" href="#kontakt">Umów termin</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Oferta -->
+    <section class="section section--alt" id="oferta">
+      <div class="container">
+        <h2 class="h2">Oferta</h2>
+        <p class="muted maxw">
+          Trzy najczęstsze potrzeby klientów. Każda usługa jest opisana jasno: co sprawdzam, co dostajesz i co dalej.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">🏢</div>
+            <h3 class="card__title">Odbiory deweloperskie</h3>
+            <p class="card__text">
+              Odbiór mieszkania z checklistą, pomiarami i dokumentacją usterek. Wiesz co podpisać, a czego nie.
+            </p>
+            <a class="card__link" href="#kontakt">Umów odbiór →</a>
+          </article>
+
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">🧱</div>
+            <h3 class="card__title">Koordynacja prac</h3>
+            <p class="card__text">
+              Pomagam prowadzić remont bez nerwów: harmonogram, kontrola jakości, odbiory etapów.
+            </p>
+            <a class="card__link" href="#kontakt">Zapytaj o koordynację →</a>
+          </article>
+
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">🛠️</div>
+            <h3 class="card__title">Pogotowie techniczne</h3>
+            <p class="card__text">
+              Szybka diagnoza awarii/usterki + plan naprawy. Konkret, bez „może”.
+            </p>
+            <a class="card__link" href="tel:576601776">Zadzwoń →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sprzęt -->
+    <section class="section section--dark" id="sprzet">
+      <div class="container grid grid--2">
+        <div>
+          <h2 class="h2">Nie zgaduję — <span class="accent">Mierzę</span></h2>
+          <p class="muted">
+            To, co widać „gołym okiem”, bywa mylące. Dlatego używam narzędzi, które pozwalają wykryć problemy,
+            zanim staną się kosztowne.
+          </p>
+
+          <div class="equipment">
+            <div class="equipment__item">
+              <div class="equipment__badge">TERMOWIZJA</div>
+              <div class="equipment__name">Kamera termowizyjna</div>
+              <div class="equipment__desc">Wykrywa mostki termiczne, zawilgocenia i nieszczelności.</div>
+            </div>
+            <div class="equipment__item">
+              <div class="equipment__badge">POMIARY</div>
+              <div class="equipment__name">Lasery / niwelacja</div>
+              <div class="equipment__desc">Sprawdza poziomy, piony, odchyłki i geometrię.</div>
+            </div>
+            <div class="equipment__item">
+              <div class="equipment__badge">TECHNIKA</div>
+              <div class="equipment__name">Detektory / mierniki</div>
+              <div class="equipment__desc">Kontrola instalacji, punktów krytycznych i obszarów ryzyka.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel--glow">
+          <h3 class="h3">Co dostajesz</h3>
+          <ul class="bullets bullets--compact">
+            <li>Listę usterek + priorytety</li>
+            <li>Zdjęcia / notatki do protokołu</li>
+            <li>Rekomendacje napraw i kolejność działań</li>
+          </ul>
+
+          <div class="callout">
+            <div class="callout__title">Szybki kontakt</div>
+            <a class="callout__phone" href="tel:576601776">📞 576&nbsp;601&nbsp;776</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Opinie -->
+    <section class="section section--alt" id="opinie">
+      <div class="container">
+        <h2 class="h2">Opinie</h2>
+        <p class="muted maxw">
+          Tu możesz wkleić realne opinie (Google / FB). Na start zostawiamy 3 przykładowe karty.
+        </p>
+
+        <div class="cards cards--reviews">
+          <article class="card card--review">
+            <div class="review__stars" aria-label="5 gwiazdek">★★★★★</div>
+            <p class="card__text">„Bardzo konkretnie, bez lania wody. Wykryte usterki uratowały nam budżet.”</p>
+            <div class="review__meta">— Klient, odbiór mieszkania</div>
+          </article>
+
+          <article class="card card--review">
+            <div class="review__stars" aria-label="5 gwiazdek">★★★★★</div>
+            <p class="card__text">„Koordynacja remontu na plus. Terminy dopilnowane, jakość sprawdzana etapami.”</p>
+            <div class="review__meta">— Klient, koordynacja prac</div>
+          </article>
+
+          <article class="card card--review">
+            <div class="review__stars" aria-label="5 gwiazdek">★★★★★</div>
+            <p class="card__text">„Szybka diagnoza i konkretne rozwiązanie. Polecam każdemu.”</p>
+            <div class="review__meta">— Klient, pogotowie techniczne</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Materiały / Galeria (pod filtr JS) -->
+    <section class="section section--dark" id="materialy">
+      <div class="container">
+        <h2 class="h2">Materiały</h2>
+        <p class="muted maxw">
+          Tu możesz wrzucać realizacje i przykłady usterek. Filtrowanie działa już teraz — wystarczy nadać zdjęciom kategorie.
+        </p>
+
+        <div class="filters" role="tablist" aria-label="Filtry galerii">
+          <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">Wszystko</button>
+          <button class="chip" data-filter="usterki" role="tab" aria-selected="false">Usterki</button>
+          <button class="chip" data-filter="wnetrza" role="tab" aria-selected="false">Wnętrza</button>
+          <button class="chip" data-filter="pomiary" role="tab" aria-selected="false">Pomiary</button>
+        </div>
+
+        <div class="gallery" id="gallery" aria-label="Galeria materiałów">
+          <!-- Przykłady (podmień na swoje zdjęcia, najlepiej lokalne w /img) -->
+          <figure class="gallery__item" data-category="usterki">
+            <img class="gallery__img" src="https://images.unsplash.com/photo-1581579185169-43d6c5d02b7b?auto=format&fit=crop&w=1200&q=70" alt="Usterka: pęknięcie na ścianie" loading="lazy">
+            <figcaption class="gallery__cap">Usterki — dokumentacja</figcaption>
+          </figure>
+
+          <figure class="gallery__item" data-category="wnetrza">
+            <img class="gallery__img" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=70" alt="Wnętrze: mieszkanie po remoncie" loading="lazy">
+            <figcaption class="gallery__cap">Wnętrza — efekt końcowy</figcaption>
+          </figure>
+
+          <figure class="gallery__item" data-category="pomiary">
+            <img class="gallery__img" src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1200&q=70" alt="Pomiary techniczne na budowie" loading="lazy">
+            <figcaption class="gallery__cap">Pomiary — nie zgaduję</figcaption>
+          </figure>
+
+          <figure class="gallery__item" data-category="usterki">
+            <img class="gallery__img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=70" alt="Usterka: problem z wykończeniem" loading="lazy">
+            <figcaption class="gallery__cap">Usterki — szczegóły</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section class="section section--alt" id="kontakt">
+      <div class="container grid grid--2">
+        <div>
+          <h2 class="h2">Kontakt</h2>
+          <p class="muted">
+            Zostaw kontakt — oddzwonię i ustalimy termin. Bez spamu, bez kruczków.
+          </p>
+
+          <div class="contact-box">
+            <div class="contact-box__row">
+              <span class="contact-box__label">Telefon</span>
+              <a class="contact-box__value" href="tel:576601776">576 601 776</a>
+            </div>
+            <div class="contact-box__row">
+              <span class="contact-box__label">E-mail</span>
+              <a class="contact-box__value" href="mailto:kontakt@prostyremont.com">kontakt@prostyremont.com</a>
+            </div>
+            <div class="contact-box__row">
+              <span class="contact-box__label">Działam</span>
+              <span class="contact-box__value">— wpisz miasto/region —</span>
+            </div>
+          </div>
+
+          <p class="muted small">
+            Tip: podmień e-mail wyżej na swój docelowy. Formularz możesz podpiąć do Formspree / EmailJS (bez backendu).
+          </p>
+        </div>
+
+        <div class="panel panel--form">
+          <h3 class="h3">Umów termin</h3>
+
+          <!--
+            Domyślnie formularz nie wysyła nigdzie (no-backend).
+            Najprościej:
+            - Formspree: action="https://formspree.io/f/TWOJ_ID"
+            - EmailJS: obsługa w JS
+          -->
+          <form class="form" id="contactForm" autocomplete="on">
+            <label class="field">
+              <span class="field__label">Imię i nazwisko</span>
+              <input class="field__input" name="name" required placeholder="np. Jan Kowalski" />
+            </label>
+
+            <label class="field">
+              <span class="field__label">Numer telefonu</span>
+              <input class="field__input" name="phone" required inputmode="tel" placeholder="np. 600 000 000" />
+            </label>
+
+            <label class="field">
+              <span class="field__label">Adres e-mail</span>
+              <input class="field__input" name="email" type="email" required placeholder="np. jan@domain.pl" />
+            </label>
+
+            <label class="field">
+              <span class="field__label">Wiadomość (opcjonalnie)</span>
+              <textarea class="field__input field__textarea" name="message" rows="4" placeholder="Krótko: odbiór / remont / usterka + miasto"></textarea>
+            </label>
+
+            <button class="btn btn--primary btn--block" type="submit">
+              Wyślij zgłoszenie
+              <span class="btn__icon" aria-hidden="true">→</span>
+            </button>
+
+            <p class="form__meta">
+              Klikając „Wyślij” akceptujesz <a href="#rodo">RODO</a> i <a href="#cookies">Cookies</a>.
+            </p>
+
+            <div class="form__toast" id="formToast" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stopka -->
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer__left">
+          <div class="footer__brand">
+            <span class="brand__prosty">PROSTY</span><span class="brand__remont">REMONT</span>
+          </div>
+          <div class="footer__meta">© <span id="year"></span> Andrzej Kornacki</div>
+        </div>
+
+        <div class="footer__social" aria-label="Social media">
+          <a class="social" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+            <!-- Instagram icon -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+          </a>
+
+          <a class="social" href="#" target="_blank" rel="noopener" aria-label="Facebook">
+            <!-- Facebook icon -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+              <path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v3H7v3h3v6h3v-6h3l1-3h-4v-3c0-.6.4-1 1-1Z" fill="currentColor"/>
+            </svg>
+          </a>
+
+          <a class="social" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+            <!-- TikTok-ish icon -->
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+              <path d="M14 3v12.2a3.8 3.8 0 1 1-3-3.7V8.3a7 7 0 1 0 6 6.9V7.6c1 .9 2.3 1.4 4 1.4V6.2c-2.2 0-3.6-1.2-4-3.2H14Z" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer__links">
+          <a id="cookies" class="footer__link" href="#">Polityka Cookies</a>
+          <a id="rodo" class="footer__link" href="#">RODO</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/galeria.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
