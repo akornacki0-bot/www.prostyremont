@@ -38,7 +38,7 @@
 
   <main id="main">
     <!-- HERO / okładka (str. 1) -->
-    <section class="hero" id="top" aria-label="Strona startowa">
+    <section class="hero hero--pdf" id="top" aria-label="Strona startowa">
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="hero__ov" aria-hidden="true"></div>
 
@@ -99,47 +99,24 @@
     </section>
 
     <!-- DLACZEGO (str. 2) -->
-    <section class="sec sec--dark" id="dlaczego">
-      <div class="wrap grid grid--2">
-        <div>
-          <h2 class="h2">Dlaczego robię to, co robię?</h2>
-          <p class="p muted">
-            Moja przygoda z branżą budowlaną zaczęła się przypadkiem — podczas remontu własnego mieszkania.
-            Przebrnąłem przez masę niedociągnięć, błędów i niedotrzymanych terminów. Remont zaczął przekraczać budżet,
-            a rynek pokazał mi, jak bardzo brakuje rzetelnych wykonawców. :contentReference[oaicite:2]{index=2}
-          </p>
-          <p class="p">
-            Wtedy stwierdziłem, że jest tu miejsce dla kogoś konkretnego — kogoś, kto zrobi to porządnie.
-            <span class="accent">Postanowiłem wziąć sprawy w swoje ręce.</span> :contentReference[oaicite:3]{index=3}
-          </p>
+    <section class="slide sec--dark" id="dlaczego">
+  <div class="slide__inner">
+    <div class="slide__label">DLACZEGO ROBIĘ, TO CO ROBIĘ?</div>
+    <h2 class="slide__title">Dlaczego robię,<br/>to co robię?</h2>
+    <div class="hr-accent"></div>
 
-          <div class="pillrow">
-            <div class="pill">konkret</div>
-            <div class="pill">pomiary</div>
-            <div class="pill">dokumentacja</div>
-            <div class="pill">bez “może”</div>
-          </div>
-
-          <div class="cta cta--left">
-            <a class="btn btn--pri" href="#odbiory">Zobacz ofertę odbiorów →</a>
-            <a class="btn btn--ghost" href="#kontakt">Zostaw kontakt</a>
-          </div>
-        </div>
-
-        <aside class="panel">
-          <h3 class="h3">Jak pracuję</h3>
-          <ol class="steps">
-            <li><span class="steps__n">1</span> Sprawdzam i mierzę kluczowe elementy.</li>
-            <li><span class="steps__n">2</span> Dokumentuję usterki (zdjęcia + opis).</li>
-            <li><span class="steps__n">3</span> Daję jasne rekomendacje co dalej.</li>
-          </ol>
-          <div class="note">
-            <div class="note__t">Cel</div>
-            <div class="note__d">Żebyś wiedział, co podpisujesz i ile to realnie kosztuje.</div>
-          </div>
-        </aside>
-      </div>
-    </section>
+    <p class="slide__text">
+      Moja przygoda z branżą budowlaną zaczęła się przypadkiem, bo podczas remontu własnego mieszkania.
+      <br/><br/>
+      W trakcie prac musiałem przebrnąć przez masę niedociągnięć, błędów i niedotrzymanych terminów.
+      Prace się przeciągały a mój remont zaczął przekraczać mój planowany budżet. To pokazało mi,
+      jak bardzo brakuje na rynku rzetelnych i solidnych wykonawców.
+      <br/><br/>
+      Wtedy stwierdziłem, że jest to miejsce dla kogoś konkretnego — kogoś, kto zrobi to porządnie.
+      <span class="accent">Postanowiłem wziąć sprawy w swoje ręce, dlatego tu jestem!</span>
+    </p>
+  </div>
+</section>
 
     <!-- ODBIORY (str. 3–5) -->
     <section class="sec sec--alt" id="odbiory">
@@ -582,3 +559,4 @@
   <script src="js/main.js" defer></script>
 </body>
 </html>
+
