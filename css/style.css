@@ -122,3 +122,79 @@ main{
 .pdfslide{
   scroll-margin-top: 70px; /* dopasowane pod wysokość headera */
 }
+/* ===== LOGO (Twoje wymaganie) ===== */
+.brand{ text-decoration:none; line-height:1.05; display:flex; flex-direction:column; }
+.brand__top{
+  color: var(--acc);
+  font-weight: 1000;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+.brand__sub{
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: .06em;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* ===== APP = zakładki jako panele (bez przewijania dalej) ===== */
+body{ height:100vh; }
+.app{
+  height: calc(100vh - 58px); /* 58px ~ wysokość headera */
+  overflow: hidden;           /* blokujemy scroll strony */
+}
+
+/* każdy panel to osobna zakładka */
+.panel{
+  display:none;
+  height:100%;
+}
+.panel.is-active{
+  display:block;
+}
+
+/* scroll tylko w ramach aktywnego panelu */
+.panel__scroll{
+  height:100%;
+  overflow-y:auto;
+  overscroll-behavior: contain; /* nie “przepycha” scrolla na body */
+  scroll-snap-type: y mandatory;
+  padding: 0;
+}
+
+/* slajdy */
+.pdfslide{
+  min-height: 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: clamp(10px, 2vw, 20px);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+}
+
+.pdfimg{
+  display:block;
+  max-width: min(1100px, 96vw);
+  max-height: calc(100vh - 58px - 40px);
+  width:auto;
+  height:auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.55);
+}
+
+/* tło pod slajdem */
+.pdfslide::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(800px 400px at 50% 35%, rgba(255,140,0,.08), transparent 60%),
+    radial-gradient(900px 600px at 50% 90%, rgba(255,255,255,.05), transparent 70%);
+  pointer-events:none;
+  opacity:.9;
+}
