@@ -12,23 +12,26 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   background:#121212;
+  overflow-x:hidden;
 }
 
-/* sekcja */
 .pdfslide{
-  padding: clamp(10px, 2vw, 24px) 0;
+  min-height:100vh;              /* każdy slajd wysokość ekranu */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
 }
 
-/* obraz PDF */
 .pdfimg{
-  display:block;
-  width: min(1100px, 96vw);   /* nigdy nie wyjdzie poza ekran */
-  height: auto;              /* zachowuje proporcje */
-  margin: 0 auto;
-  border-radius: 10px;
-  box-shadow: 0 14px 40px rgba(0,0,0,.45);
+  max-width:95vw;
+  max-height:90vh;               /* dopasowanie do wysokości ekranu */
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+  border-radius:12px;
 }
-
 a{color:inherit}
 .wrap{width:min(1100px, 92%);margin:0 auto}
 
