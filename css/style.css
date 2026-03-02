@@ -188,3 +188,69 @@ a{color:inherit}
 }
 .nav__l:hover::after{ opacity:.9; transform: scaleX(1); }
 .nav__l.is-active::after{ opacity:0; }
+
+/* ===== STICKY CONTACT BAR ===== */
+.contactbar{
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1200;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  padding: 10px;
+  border-radius: 16px;
+
+  background: rgba(18,18,18,.75);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+
+/* niech slajd nie chowa się pod belką */
+.panel__scroll{
+  padding-bottom: 92px; /* miejsce na contactbar */
+}
+
+.cbtn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  font-weight: 900;
+  text-decoration:none;
+  padding: 12px 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+
+.cbtn:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.22);
+}
+
+.cbtn--call{
+  background: var(--acc);
+  border-color: rgba(255,140,0,.7);
+  color:#000;
+}
+.cbtn--call:hover{ background:#ffa31a; }
+
+.cbtn--mail{ }
+.cbtn--wa{ }
+
+@media (max-width: 520px){
+  .contactbar{
+    grid-template-columns: 1fr; /* na telefonie w kolumnie */
+  }
+  .panel__scroll{ padding-bottom: 170px; }
+}
