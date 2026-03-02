@@ -5,21 +5,33 @@
   if (y) y.textContent = new Date().getFullYear();
 
   // mobile nav
+  (() => {
   const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
-  if (burger && nav) {
-    burger.addEventListener("click", () => {
-      const open = nav.classList.toggle("is-open");
-      burger.setAttribute("aria-expanded", String(open));
-    });
 
-    nav.querySelectorAll("a").forEach(a => {
-      a.addEventListener("click", () => {
-        nav.classList.remove("is-open");
-        burger.setAttribute("aria-expanded", "false");
-      });
-    });
-  }
+  if (!burger || !nav) return;
+
+  const closeMenu = () => {
+    nav.classList.remove("is-open");
+    burger.setAttribute("aria-expanded", "false");
+  };
+
+  burger.addEventListener("click", () => {
+    const open = nav.classList.toggle("is-open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  // zamknij menu po kliknięciu linku
+  nav.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (a) closeMenu();
+  });
+
+  // zamknij po ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+})();
 
   // counters (belt)
   const counters = [...document.querySelectorAll("[data-counter]")];
