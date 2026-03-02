@@ -118,4 +118,7 @@ main{
     max-height: calc(100vh - 58px - 20px);
     border-radius: 10px;
   }
+  /* żeby po kliknięciu w menu sekcja nie chowała się pod sticky header */
+.pdfslide{
+  scroll-margin-top: 70px; /* dopasowane pod wysokość headera */
 }
