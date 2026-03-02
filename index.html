@@ -1,19 +1,77 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PROSTY REMONT</title>
-
-  <!-- TO JEST KLUCZ: -->
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prosty Remont | Odbiory deweloperskie i audyty techniczne</title>
+    <meta name="description" content="Odbiory mieszkań od dewelopera, koordynacja remontów, audyty techniczne. Profesjonalnie i bez komplikacji.">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Twoja zawartość strony -->
-  <h1>PROSTY REMONT</h1>
+<header>
+    <div class="container nav">
+        <div class="logo">PROSTY REMONT</div>
 
-  <!-- JS (jeśli używasz galerii) -->
-  <script src="js/galeria.js" defer></script>
+        <button class="hamburger" id="hamburger">
+            ☰
+        </button>
+
+        <nav id="navMenu">
+            <a href="#about">O mnie</a>
+            <a href="#offer">Oferta</a>
+            <a href="#reviews">Opinie</a>
+            <a href="#materials">Materiały</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>PROSTY REMONT</h1>
+        <p>Odbiory deweloperskie • Koordynacja remontów • Audyty techniczne</p>
+        <a href="tel:576601776" class="btn">📞 576 601 776</a>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <div class="container">
+        <h2>O mnie</h2>
+        <p>Pomagam w bezproblemowym odbiorze mieszkań i prowadzeniu remontów. Stawiam na jakość, przejrzystość i rzetelność wykonania.</p>
+    </div>
+</section>
+
+<section id="offer" class="section light">
+    <div class="container">
+        <h2>Oferta</h2>
+        <ul class="offer-list">
+            <li>Odbiory mieszkań od dewelopera</li>
+            <li>Koordynacja remontów</li>
+            <li>Audyty techniczne</li>
+        </ul>
+    </div>
+</section>
+
+<section id="contact" class="section">
+    <div class="container">
+        <h2>Kontakt</h2>
+        <p>Zadzwoń i umów termin:</p>
+        <a href="tel:576601776" class="btn">📞 576 601 776</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        © 2026 Prosty Remont
+    </div>
+</footer>
+
+<script src="js/galeria.js" defer></script>
+<script src="js/main.js" defer></script>
+
 </body>
 </html>
