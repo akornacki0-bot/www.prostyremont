@@ -13,10 +13,9 @@
 
 <header class="hdr" id="hdr">
   <div class="wrap hdr__in">
-    <a class="brand" href="#start" aria-label="Prosty Remont — start">
-      <span class="brand__a">PROSTY</span>
-      <span class="brand__b">REMONT</span>
-      <span class="brand__c">Andrzej Kornacki</span>
+    <a class="brand" href="#start" data-nav="start" aria-label="Prosty Remont — start">
+      <span class="brand__top">PROSTY REMONT</span>
+      <span class="brand__sub">Andrzej Kornacki</span>
     </a>
 
     <button class="burger" id="burger" aria-controls="nav" aria-expanded="false" aria-label="Menu">
@@ -24,71 +23,63 @@
     </button>
 
     <nav class="nav" id="nav">
-      <a class="nav__l" href="#o-mnie">O mnie</a>
-      <a class="nav__l" href="#oferta">Oferta</a>
-      <a class="nav__l" href="#materialy">Materiały</a>
-      <a class="nav__cta" href="#kontakt">Kontakt</a>
+      <a class="nav__l" href="#o-mnie" data-nav="o-mnie">O mnie</a>
+      <a class="nav__l" href="#oferta" data-nav="oferta">Oferta</a>
+      <a class="nav__l" href="#materialy" data-nav="materialy">Materiały</a>
+      <a class="nav__cta" href="#kontakt" data-nav="kontakt">Kontakt</a>
     </nav>
   </div>
 </header>
 
-<main>
+<main class="app" id="app">
 
   <!-- START -->
-  <section class="pdfslide" id="start" aria-label="Start">
-    <img class="pdfimg" src="assets/pdf/pages/page-01.png" alt="Prosta Oferta — okładka" />
+  <section class="panel is-active" id="start" data-panel="start" aria-label="Start">
+    <div class="panel__scroll">
+      <section class="pdfslide">
+        <img class="pdfimg" src="assets/pdf/pages/page-01.png" alt="Prosta oferta — okładka">
+      </section>
+    </div>
   </section>
 
   <!-- O MNIE -->
-  <section class="pdfslide" id="o-mnie" aria-label="O mnie">
-    <img class="pdfimg" src="assets/pdf/pages/page-02.png" alt="Dlaczego robię to, co robię" />
+  <section class="panel" id="o-mnie" data-panel="o-mnie" aria-label="O mnie">
+    <div class="panel__scroll">
+      <section class="pdfslide">
+        <img class="pdfimg" src="assets/pdf/pages/page-02.png" alt="O mnie">
+      </section>
+    </div>
   </section>
 
-  <!-- OFERTA (blok) -->
-  <section class="pdfslide" id="oferta" aria-label="Oferta">
-    <img class="pdfimg" src="assets/pdf/pages/page-03.png" alt="Oferta — odbiory techniczne" />
-  </section>
-
-  <section class="pdfslide" aria-label="Oferta — strona 4">
-    <img class="pdfimg" src="assets/pdf/pages/page-04.png" alt="Oferta — strona 4" />
-  </section>
-
-  <section class="pdfslide" aria-label="Oferta — strona 5">
-    <img class="pdfimg" src="assets/pdf/pages/page-05.png" alt="Oferta — strona 5" />
-  </section>
-
-  <section class="pdfslide" aria-label="Oferta — sprzęt">
-    <img class="pdfimg" src="assets/pdf/pages/page-06.png" alt="Sprzęt" />
-  </section>
-
-  <section class="pdfslide" aria-label="Oferta — awarie">
-    <img class="pdfimg" src="assets/pdf/pages/page-07.png" alt="Lokalizowanie awarii" />
-  </section>
-
-  <section class="pdfslide" aria-label="Oferta — koordynacja">
-    <img class="pdfimg" src="assets/pdf/pages/page-08.png" alt="Koordynacja" />
-  </section>
-
-  <section class="pdfslide" aria-label="Oferta — koordynacja 2">
-    <img class="pdfimg" src="assets/pdf/pages/page-09.png" alt="Koordynacja — szczegóły" />
-  </section>
-
-  <section class="pdfslide" aria-label="Oferta — konsultacje">
-    <img class="pdfimg" src="assets/pdf/pages/page-10.png" alt="Konsultacje" />
+  <!-- OFERTA -->
+  <section class="panel" id="oferta" data-panel="oferta" aria-label="Oferta">
+    <div class="panel__scroll">
+      <section class="pdfslide"><img class="pdfimg" src="assets/pdf/pages/page-03.png" alt="Oferta — 1"></section>
+      <section class="pdfslide"><img class="pdfimg" src="assets/pdf/pages/page-04.png" alt="Oferta — 2"></section>
+      <section class="pdfslide"><img class="pdfimg" src="assets/pdf/pages/page-05.png" alt="Oferta — 3"></section>
+      <section class="pdfslide"><img class="pdfimg" src="assets/pdf/pages/page-06.png" alt="Oferta — 4"></section>
+      <section class="pdfslide"><img class="pdfimg" src="assets/pdf/pages/page-07.png" alt="Oferta — 5"></section>
+      <section class="pdfslide"><img class="pdfimg" src="assets/pdf/pages/page-08.png" alt="Oferta — 6"></section>
+      <section class="pdfslide"><img class="pdfimg" src="assets/pdf/pages/page-09.png" alt="Oferta — 7"></section>
+      <section class="pdfslide"><img class="pdfimg" src="assets/pdf/pages/page-10.png" alt="Oferta — 8"></section>
+    </div>
   </section>
 
   <!-- MATERIAŁY -->
-  <section class="pdfslide" id="materialy" aria-label="Materiały">
-    <img class="pdfimg" src="assets/pdf/pages/page-11.png" alt="Dodatkowe informacje" />
-  </section>
-
-  <section class="pdfslide" aria-label="Materiały — współpraca">
-    <img class="pdfimg" src="assets/pdf/pages/page-12.png" alt="Z kim współpracuję" />
+  <section class="panel" id="materialy" data-panel="materialy" aria-label="Materiały">
+    <div class="panel__scroll">
+      <section class="pdfslide"><img class="pdfimg" src="assets/pdf/pages/page-11.png" alt="Materiały — 1"></section>
+      <section class="pdfslide"><img class="pdfimg" src="assets/pdf/pages/page-12.png" alt="Materiały — 2"></section>
+    </div>
   </section>
 
   <!-- KONTAKT -->
-  <section class="pdfslide" id="kontakt" aria-label="Kontakt">
-    <img class="pdfimg" src="assets/pdf/pages/page-13.png" alt="Kontakt" />
+  <section class="panel" id="kontakt" data-panel="kontakt" aria-label="Kontakt">
+    <div class="panel__scroll">
+      <section class="pdfslide">
+        <img class="pdfimg" src="assets/pdf/pages/page-13.png" alt="Kontakt">
+      </section>
+    </div>
   </section>
 
 </main>
