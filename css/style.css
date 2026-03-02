@@ -52,7 +52,7 @@ nav a:hover {
 
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                 url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover no-repeat;
     display: flex;
     justify-content: center;
@@ -101,6 +101,15 @@ nav a:hover {
     font-family: 'Playfair Display', serif;
 }
 
+.offer-list {
+    list-style: none;
+}
+
+.offer-list li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
 footer {
     background: #111;
     color: white;
@@ -108,12 +117,37 @@ footer {
     padding: 20px 0;
 }
 
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 36px;
-    }
+/* Mobile */
 
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
     nav {
         display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 36px;
     }
 }
