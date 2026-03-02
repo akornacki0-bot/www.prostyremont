@@ -2,6 +2,17 @@
   const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
 
+  const hdr = document.getElementById("hdr");
+
+const setHdrH = () => {
+  if (!hdr) return;
+  const h = Math.ceil(hdr.getBoundingClientRect().height);
+  document.documentElement.style.setProperty("--hdrH", `${h}px`);
+};
+
+setHdrH();
+window.addEventListener("resize", setHdrH);
+
   const panels = Array.from(document.querySelectorAll("[data-panel]"));
   const navLinks = Array.from(document.querySelectorAll("[data-nav]"));
 
