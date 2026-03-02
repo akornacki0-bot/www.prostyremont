@@ -1,41 +1,38 @@
 (() => {
-  const navToggle = document.getElementById("navToggle");
+  const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
-  const header = document.getElementById("header");
+  const hdr = document.getElementById("hdr");
   const year = document.getElementById("year");
 
   if (year) year.textContent = String(new Date().getFullYear());
 
-  // Mobile nav toggle
-  if (navToggle && nav) {
-    navToggle.addEventListener("click", () => {
+  // mobile menu
+  if (burger && nav) {
+    burger.addEventListener("click", () => {
       const isOpen = nav.classList.toggle("is-open");
-      navToggle.setAttribute("aria-expanded", String(isOpen));
+      burger.setAttribute("aria-expanded", String(isOpen));
     });
 
-    // Close nav when clicking a link (mobile)
     nav.addEventListener("click", (e) => {
-      const target = e.target;
-      if (target instanceof HTMLAnchorElement && target.classList.contains("nav__link")) {
+      const t = e.target;
+      if (t instanceof HTMLAnchorElement) {
         nav.classList.remove("is-open");
-        navToggle.setAttribute("aria-expanded", "false");
+        burger.setAttribute("aria-expanded", "false");
       }
     });
 
-    // Close nav on outside click
     document.addEventListener("click", (e) => {
       const t = e.target;
       if (!(t instanceof Node)) return;
-      if (!nav.contains(t) && !navToggle.contains(t)) {
+      if (!nav.contains(t) && !burger.contains(t)) {
         nav.classList.remove("is-open");
-        navToggle.setAttribute("aria-expanded", "false");
+        burger.setAttribute("aria-expanded", "false");
       }
     });
   }
 
-  // Smooth scroll with offset (sticky header)
-  const links = document.querySelectorAll('a[href^="#"]');
-  links.forEach((a) => {
+  // smooth scroll with header offset
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
       const href = a.getAttribute("href");
       if (!href || href === "#") return;
@@ -44,58 +41,55 @@
       if (!el) return;
 
       e.preventDefault();
-      const headerH = header ? header.getBoundingClientRect().height : 0;
+      const headerH = hdr ? hdr.getBoundingClientRect().height : 0;
       const top = el.getBoundingClientRect().top + window.scrollY - headerH + 6;
-
       window.scrollTo({ top, behavior: "smooth" });
     });
   });
 
-  // Counter animation (only once)
+  // counters (once)
   const counterEls = Array.from(document.querySelectorAll("[data-counter]"));
-  const animateCounters = () => {
-    counterEls.forEach((el) => {
-      const target = Number(el.getAttribute("data-counter") || "0");
-      const duration = 900;
-      const start = performance.now();
-      const from = 0;
-
-      const tick = (now) => {
-        const p = Math.min(1, (now - start) / duration);
-        const value = Math.round(from + (target - from) * (1 - Math.pow(1 - p, 3)));
-        el.textContent = `${value}+`;
-        if (p < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    });
-  };
-
   if (counterEls.length) {
+    const run = () => {
+      counterEls.forEach((el) => {
+        const target = Number(el.getAttribute("data-counter") || "0");
+        const duration = 900;
+        const start = performance.now();
+
+        const tick = (now) => {
+          const p = Math.min(1, (now - start) / duration);
+          const value = Math.round(target * (1 - Math.pow(1 - p, 3)));
+          el.textContent = `${value}+`;
+          if (p < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      });
+    };
+
     const hero = document.querySelector(".hero");
     const io = new IntersectionObserver(
       (entries) => {
-        const anyVisible = entries.some((en) => en.isIntersecting);
-        if (anyVisible) {
-          animateCounters();
+        if (entries.some((x) => x.isIntersecting)) {
+          run();
           io.disconnect();
         }
       },
       { threshold: 0.25 }
     );
     if (hero) io.observe(hero);
-    else animateCounters();
+    else run();
   }
 
-  // Contact form (no backend) — friendly toast + mailto fallback
-  const form = document.getElementById("contactForm");
-  const toast = document.getElementById("formToast");
+  // contact form: mailto fallback
+  const form = document.getElementById("form");
+  const toast = document.getElementById("toast");
 
   const showToast = (msg) => {
     if (!toast) return;
     toast.textContent = msg;
     toast.style.display = "block";
-    window.clearTimeout(showToast._t);
-    showToast._t = window.setTimeout(() => (toast.style.display = "none"), 4200);
+    clearTimeout(showToast._t);
+    showToast._t = setTimeout(() => (toast.style.display = "none"), 4200);
   };
 
   if (form) {
@@ -108,23 +102,21 @@
       const email = String(fd.get("email") || "").trim();
       const message = String(fd.get("message") || "").trim();
 
-      // Minimal validation
       if (!name || !phone || !email) {
         showToast("Uzupełnij wymagane pola: imię, telefon i e-mail.");
         return;
       }
 
-      // Fallback: open mail client (możesz podpiąć Formspree/EmailJS później)
-      const subject = encodeURIComponent("Prosty Remont — umów termin");
+      const subject = encodeURIComponent("Prosty Remont — zgłoszenie / umów termin");
       const body = encodeURIComponent(
         `Imię i nazwisko: ${name}\nTelefon: ${phone}\nE-mail: ${email}\n\nWiadomość:\n${message || "-"}`
       );
 
-      // Podmień docelowy adres jeśli chcesz
-      const to = "kontakt@prostyremont.com";
+      // docelowy e-mail (wg PDF)
+      const to = "pr.kornacki@gmail.com";
       window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
 
-      showToast("Otwieram klienta poczty… Jeśli nie masz poczty, zadzwoń: 576 601 776.");
+      showToast("Otwieram pocztę… Jeśli nie działa, zadzwoń: 576 601 776.");
       form.reset();
     });
   }
