@@ -1,95 +1,62 @@
-// js/main.js
 (() => {
-  // year in footer
-  const y = document.getElementById("year");
-  if (y) y.textContent = new Date().getFullYear();
-
-  // mobile nav
-  (() => {
   const burger = document.getElementById("burger");
   const nav = document.getElementById("nav");
 
-  if (!burger || !nav) return;
+  const panels = Array.from(document.querySelectorAll("[data-panel]"));
+  const navLinks = Array.from(document.querySelectorAll("[data-nav]"));
+
+  const getPanel = (name) => panels.find(p => p.dataset.panel === name);
 
   const closeMenu = () => {
+    if (!nav || !burger) return;
     nav.classList.remove("is-open");
     burger.setAttribute("aria-expanded", "false");
   };
 
-  burger.addEventListener("click", () => {
-    const open = nav.classList.toggle("is-open");
-    burger.setAttribute("aria-expanded", open ? "true" : "false");
-  });
+  const openPanel = (name, { pushHash = true } = {}) => {
+    const panel = getPanel(name);
+    if (!panel) return;
 
-  // zamknij menu po kliknięciu linku
-  nav.addEventListener("click", (e) => {
-    const a = e.target.closest("a");
-    if (a) closeMenu();
-  });
+    // przełącz aktywną zakładkę
+    panels.forEach(p => p.classList.toggle("is-active", p === panel));
 
-  // zamknij po ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
-})();
+    // przewiń na górę nowej zakładki
+    const scroller = panel.querySelector(".panel__scroll");
+    if (scroller) scroller.scrollTo({ top: 0, behavior: "instant" });
 
-  // counters (belt)
-  const counters = [...document.querySelectorAll("[data-counter]")];
-  if (counters.length) {
-    const animate = (el) => {
-      const target = Number(el.getAttribute("data-counter") || "0");
-      const duration = 900;
-      const start = performance.now();
-      const from = 0;
+    // ustaw hash w URL (żeby działało odświeżenie / link)
+    if (pushHash) {
+      history.replaceState(null, "", `#${name}`);
+    }
 
-      const tick = (t) => {
-        const p = Math.min(1, (t - start) / duration);
-        const val = Math.round(from + (target - from) * (1 - Math.pow(1 - p, 3)));
-        el.textContent = String(val) + "+";
-        if (p < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-    };
+    closeMenu();
+  };
 
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          animate(e.target);
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.35 });
-
-    counters.forEach(c => io.observe(c));
-  }
-
-  // contact form -> mailto (no backend)
-  const form = document.getElementById("form");
-  const toast = document.getElementById("toast");
-
-  if (form) {
-    form.addEventListener("submit", (ev) => {
-      ev.preventDefault();
-      const fd = new FormData(form);
-
-      const name = String(fd.get("name") || "").trim();
-      const phone = String(fd.get("phone") || "").trim();
-      const email = String(fd.get("email") || "").trim();
-      const msg = String(fd.get("message") || "").trim();
-
-      const subject = encodeURIComponent("Prosty Remont — zapytanie z www");
-      const body = encodeURIComponent(
-        `Imię i nazwisko: ${name}\nTelefon: ${phone}\nE-mail: ${email}\n\nWiadomość:\n${msg || "(brak)"}`
-      );
-
-      const mailto = `mailto:pr.kornacki@gmail.com?subject=${subject}&body=${body}`;
-      window.location.href = mailto;
-
-      if (toast) {
-        toast.textContent = "Otwieram e-mail…";
-        toast.style.display = "block";
-        setTimeout(() => (toast.style.display = "none"), 2200);
-      }
+  // burger
+  if (burger && nav) {
+    burger.addEventListener("click", () => {
+      const open = nav.classList.toggle("is-open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
     });
   }
+
+  // klik w linki menu
+  navLinks.forEach(a => {
+    a.addEventListener("click", (e) => {
+      const name = a.dataset.nav;
+      if (!name) return;
+      e.preventDefault();
+      openPanel(name);
+    });
+  });
+
+  // start z hash
+  const initial = (location.hash || "#start").replace("#", "");
+  openPanel(initial, { pushHash: false });
+
+  // reakcja na ręczną zmianę hasha
+  window.addEventListener("hashchange", () => {
+    const name = (location.hash || "#start").replace("#", "");
+    openPanel(name, { pushHash: false });
+  });
 })();
