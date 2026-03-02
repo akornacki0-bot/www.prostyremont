@@ -1,29 +1,32 @@
-// /js/galeria.js
+(() => {
+  const chips = Array.from(document.querySelectorAll(".chip[data-filter]"));
+  const items = Array.from(document.querySelectorAll(".gallery__item[data-category]"));
 
-document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('.filter-btn');
-    const items = document.querySelectorAll('.gallery-item');
+  if (!chips.length || !items.length) return;
 
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            // 1. Usuń klasę 'active' ze wszystkich przycisków
-            buttons.forEach(btn => btn.classList.remove('active'));
-            // 2. Dodaj 'active' do klikniętego przycisku
-            button.classList.add('active');
-
-            const filterValue = button.getAttribute('data-filter');
-
-            // 3. Filtrowanie elementów
-            items.forEach(item => {
-                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                    item.style.display = 'block';
-                    // Mała animacja pojawiania się
-                    item.style.opacity = '0';
-                    setTimeout(() => { item.style.opacity = '1'; }, 10);
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
+  const setActiveChip = (chip) => {
+    chips.forEach((c) => {
+      c.classList.toggle("is-active", c === chip);
+      c.setAttribute("aria-selected", c === chip ? "true" : "false");
     });
-});
+  };
+
+  const applyFilter = (filter) => {
+    items.forEach((it) => {
+      const cat = it.getAttribute("data-category");
+      const show = filter === "all" || cat === filter;
+      it.classList.toggle("is-hidden", !show);
+    });
+  };
+
+  chips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const filter = chip.getAttribute("data-filter") || "all";
+      setActiveChip(chip);
+      applyFilter(filter);
+    });
+  });
+
+  // Domyślnie: wszystko
+  applyFilter("all");
+})();
