@@ -8,6 +8,7 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
+html, body { height: 100%; }
 html{scroll-behavior:smooth}
 body{
   font-family: system-ui, -apple-system, "Segoe UI", Verdana, Arial, sans-serif;
@@ -74,7 +75,7 @@ a{color:inherit}
   .burger{display:block}
   .nav{
     display:none;
-    position:absolute; right:4%; top:58px;
+    position:absolute; right:4%; top:var(--hdrH);
     background:rgba(18,18,18,.96);
     border:1px solid var(--line);
     border-radius:16px;
