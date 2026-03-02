@@ -24,18 +24,23 @@
   };
 
   const openPanel = (name, { pushHash = true } = {}) => {
-    const panel = getPanel(name);
-    if (!panel) return;
+  const panel = getPanel(name);
+  if (!panel) return;
 
-    panels.forEach(p => p.classList.toggle("is-active", p === panel));
+  // przełącz aktywną zakładkę (panel)
+  panels.forEach(p => p.classList.toggle("is-active", p === panel));
 
-    const scroller = panel.querySelector(".panel__scroll");
-    if (scroller) scroller.scrollTo({ top: 0, behavior: "auto" });
+  // 🔥 podświetl aktywny link w menu
+  navLinks.forEach(a => a.classList.toggle("is-active", a.dataset.nav === name));
 
-    if (pushHash) history.replaceState(null, "", `#${name}`);
+  // przewiń na górę nowej zakładki
+  const scroller = panel.querySelector(".panel__scroll");
+  if (scroller) scroller.scrollTo({ top: 0, behavior: "auto" });
 
-    closeMenu();
-  };
+  if (pushHash) history.replaceState(null, "", `#${name}`);
+
+  closeMenu();
+};
 
   if (burger && nav) {
     burger.addEventListener("click", () => {
