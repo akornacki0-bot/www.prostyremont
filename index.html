@@ -3,274 +3,474 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Prosty Remont — Andrzej Kornacki | Odbiory, remonty, audyty</title>
-  <meta name="description" content="Prosty Remont — Andrzej Kornacki. Odbiory deweloperskie, koordynacja prac, pogotowie techniczne. Nie zgaduję — mierzę. Umów termin." />
+  <title>Prosty Remont — Andrzej Kornacki | Prosta oferta</title>
+  <meta name="description" content="Prosty Remont — Andrzej Kornacki. Odbiory techniczne nieruchomości, nadzór i koordynacja prac remontowych, lokalizowanie awarii. Nie zgaduję — mierzę." />
   <meta name="theme-color" content="#121212" />
-
-  <!-- Open Graph (opcjonalnie, ale warto) -->
-  <meta property="og:title" content="Prosty Remont — Andrzej Kornacki" />
-  <meta property="og:description" content="Konkretnie. Technicznie. Godny zaufania. Odbiory, remonty, audyty." />
-  <meta property="og:type" content="website" />
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
-  <!-- Skip link -->
-  <a class="skip-link" href="#main">Przejdź do treści</a>
+  <a class="skip" href="#main">Przejdź do treści</a>
 
-  <!-- Header / Sticky Nav -->
-  <header class="header" id="header">
-    <div class="container header__inner">
+  <!-- Sticky header -->
+  <header class="hdr" id="hdr">
+    <div class="wrap hdr__in">
       <a class="brand" href="#top" aria-label="Prosty Remont — start">
-        <span class="brand__prosty">PROSTY</span>
-        <span class="brand__remont">REMONT</span>
-        <span class="brand__sub">Andrzej Kornacki</span>
+        <span class="brand__a">PROSTY</span>
+        <span class="brand__b">REMONT</span>
+        <span class="brand__c">Andrzej Kornacki</span>
       </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false" aria-controls="nav">
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
-        <span class="nav-toggle__bar"></span>
+      <button class="burger" id="burger" aria-controls="nav" aria-expanded="false" aria-label="Menu">
+        <span></span><span></span><span></span>
       </button>
 
       <nav class="nav" id="nav">
-        <a class="nav__link" href="#o-mnie">O mnie</a>
-        <a class="nav__link" href="#oferta">Oferta</a>
-        <a class="nav__link" href="#opinie">Opinie</a>
-        <a class="nav__link" href="#materialy">Materiały</a>
-        <a class="nav__link nav__cta" href="#kontakt">Umów termin</a>
+        <a class="nav__l" href="#dlaczego">Dlaczego</a>
+        <a class="nav__l" href="#odbiory">Odbiory</a>
+        <a class="nav__l" href="#sprzet">Sprzęt</a>
+        <a class="nav__l" href="#koordynacja">Koordynacja</a>
+        <a class="nav__l" href="#materialy">Materiały</a>
+        <a class="nav__cta" href="#kontakt">Kontakt</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <!-- Hero -->
-    <section class="hero" id="top" aria-label="Sekcja główna">
-      <div class="hero__bg" role="img" aria-label="Tło: plan budowlany i prace techniczne"></div>
-      <div class="hero__overlay"></div>
+    <!-- HERO / okładka (str. 1) -->
+    <section class="hero" id="top" aria-label="Strona startowa">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__ov" aria-hidden="true"></div>
 
-      <div class="container hero__content">
-        <p class="hero__kicker">Odbiory deweloperskie • Koordynacja prac • Audyty techniczne</p>
+      <div class="wrap hero__in">
+        <div class="badge">
+          <span class="badge__txt">98% klientów z poleceń</span>
+        </div>
 
-        <h1 class="hero__title">
-          <span class="hero__title--prosty">PROSTY</span>
-          <span class="hero__title--remont">REMONT</span>
+        <p class="kicker">PROSTA OFERTA</p>
+
+        <h1 class="h1">
+          <span class="h1__a">PROSTY</span>
+          <span class="h1__b">REMONT</span>
         </h1>
 
-        <p class="hero__lead">
-          Konkretnie. Technicznie. Bez zgadywania. <span class="accent">Mierzę</span> i raportuję.
+        <p class="lead">
+          Audytor techniczny, tata i koordynator remontowy.
+          <br />
+          <span class="muted">Konkretnie • technicznie • godny zaufania</span>
         </p>
 
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="#kontakt">
-            Umów termin
-            <span class="btn__icon" aria-hidden="true">→</span>
-          </a>
-
+        <div class="cta">
+          <a class="btn btn--pri" href="#kontakt">Umów termin <span aria-hidden="true">→</span></a>
           <a class="btn btn--ghost" href="tel:576601776" aria-label="Zadzwoń 576 601 776">
-            <span class="btn__icon" aria-hidden="true">📞</span>
-            576&nbsp;601&nbsp;776
+            <span aria-hidden="true">📞</span> 576&nbsp;601&nbsp;776
           </a>
         </div>
 
-        <div class="hero__trust">
-          <div class="trust">
-            <div class="trust__item">
-              <div class="trust__value" data-counter="150">0</div>
-              <div class="trust__label">Remonty</div>
+        <div class="micro">
+          <span class="micro__dot"></span> Odbiory techniczne nieruchomości
+          <span class="micro__sep">•</span> Nadzór i koordynacja prac
+          <span class="micro__sep">•</span> Lokalizowanie awarii
+        </div>
+      </div>
+
+      <!-- belt: autorytet liczbami -->
+      <div class="wrap belt">
+        <div class="belt__box">
+          <div class="metric">
+            <div class="metric__v" data-counter="150">0</div>
+            <div class="metric__t">Koordynacje / realizacje</div>
+          </div>
+          <div class="metric">
+            <div class="metric__v" data-counter="100">0</div>
+            <div class="metric__t">Remonty (blisko)</div>
+          </div>
+          <div class="metric">
+            <div class="metric__i" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                <path d="M14.7 6.3a4 4 0 0 0-5.66 5.66l7.07 7.07a2 2 0 0 0 2.83-2.83l-7.07-7.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 2a6 6 0 0 0 7.74 7.74" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
             </div>
-            <div class="trust__item">
-              <div class="trust__value" data-counter="200">0</div>
-              <div class="trust__label">Odbiory</div>
-            </div>
-            <div class="trust__item">
-              <div class="trust__icon" aria-hidden="true">
-                <!-- prosta ikonka narzędzi -->
-                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                  <path d="M14.7 6.3a4 4 0 0 0-5.66 5.66l7.07 7.07a2 2 0 0 0 2.83-2.83l-7.07-7.07" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M12 2a6 6 0 0 0 7.74 7.74" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div class="trust__label">Awarie i usterki</div>
-            </div>
+            <div class="metric__t">Nie zgaduję — mierzę</div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- O mnie -->
-    <section class="section section--dark" id="o-mnie">
-      <div class="container grid grid--2">
+    <!-- DLACZEGO (str. 2) -->
+    <section class="sec sec--dark" id="dlaczego">
+      <div class="wrap grid grid--2">
         <div>
-          <h2 class="h2">O mnie</h2>
-          <p class="muted">
-            Nazywam się <strong>Andrzej Kornacki</strong>. Pomagam klientom odbierać mieszkania od dewelopera,
-            koordynować remonty i szybko diagnozować usterki. Pracuję technicznie — mówię wprost co jest OK,
-            co wymaga poprawy i jak to udokumentować.
+          <h2 class="h2">Dlaczego robię to, co robię?</h2>
+          <p class="p muted">
+            Moja przygoda z branżą budowlaną zaczęła się przypadkiem — podczas remontu własnego mieszkania.
+            Przebrnąłem przez masę niedociągnięć, błędów i niedotrzymanych terminów. Remont zaczął przekraczać budżet,
+            a rynek pokazał mi, jak bardzo brakuje rzetelnych wykonawców. :contentReference[oaicite:2]{index=2}
+          </p>
+          <p class="p">
+            Wtedy stwierdziłem, że jest tu miejsce dla kogoś konkretnego — kogoś, kto zrobi to porządnie.
+            <span class="accent">Postanowiłem wziąć sprawy w swoje ręce.</span> :contentReference[oaicite:3]{index=3}
           </p>
 
-          <ul class="bullets">
-            <li>Checklisty + protokół usterek</li>
-            <li>Priorytety napraw i realne koszty</li>
-            <li>Komunikacja z wykonawcami bez chaosu</li>
-          </ul>
+          <div class="pillrow">
+            <div class="pill">konkret</div>
+            <div class="pill">pomiary</div>
+            <div class="pill">dokumentacja</div>
+            <div class="pill">bez “może”</div>
+          </div>
 
-          <div class="note">
-            <div class="note__title">Industrial Dark • Styl ekspercki</div>
-            <div class="note__text">W tej stronie wszystko jest podporządkowane czytelności i zaufaniu.</div>
+          <div class="cta cta--left">
+            <a class="btn btn--pri" href="#odbiory">Zobacz ofertę odbiorów →</a>
+            <a class="btn btn--ghost" href="#kontakt">Zostaw kontakt</a>
           </div>
         </div>
 
-        <div class="panel">
-          <h3 class="h3">W skrócie</h3>
-          <div class="stats">
-            <div class="stat">
-              <div class="stat__num"><span class="accent">150+</span></div>
-              <div class="stat__label">zrealizowanych remontów</div>
+        <aside class="panel">
+          <h3 class="h3">Jak pracuję</h3>
+          <ol class="steps">
+            <li><span class="steps__n">1</span> Sprawdzam i mierzę kluczowe elementy.</li>
+            <li><span class="steps__n">2</span> Dokumentuję usterki (zdjęcia + opis).</li>
+            <li><span class="steps__n">3</span> Daję jasne rekomendacje co dalej.</li>
+          </ol>
+          <div class="note">
+            <div class="note__t">Cel</div>
+            <div class="note__d">Żebyś wiedział, co podpisujesz i ile to realnie kosztuje.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ODBIORY (str. 3–5) -->
+    <section class="sec sec--alt" id="odbiory">
+      <div class="wrap">
+        <h2 class="h2">Odbiory techniczne nieruchomości</h2>
+        <p class="p muted maxw">
+          Dwa rynki (pierwotny / wtórny) i dwa pakiety (podstawowy / rozszerzony). Zakres zgodny z materiałem PDF. :contentReference[oaicite:4]{index=4}
+        </p>
+
+        <div class="tabs" role="tablist" aria-label="Rynek">
+          <button class="tab is-active" data-tab="pierwotny" role="tab" aria-selected="true">Rynek pierwotny</button>
+          <button class="tab" data-tab="wtorny" role="tab" aria-selected="false">Rynek wtórny</button>
+        </div>
+
+        <!-- PIERWOTNY -->
+        <div class="tabpane is-active" id="tab-pierwotny" data-pane="pierwotny">
+          <div class="compare">
+            <div class="compare__head">
+              <div class="compare__h">Zakres</div>
+              <div class="compare__h">Pakiet podstawowy</div>
+              <div class="compare__h">Pakiet rozszerzony</div>
             </div>
-            <div class="stat">
-              <div class="stat__num"><span class="accent">200+</span></div>
-              <div class="stat__label">odbiorów deweloperskich</div>
+
+            <div class="row">
+              <div class="cell">Weryfikacja powierzchni użytkowej</div>
+              <div class="cell yes">✓</div><div class="cell yes">✓</div>
             </div>
-            <div class="stat">
-              <div class="stat__num"><span class="accent">24/7</span></div>
-              <div class="stat__label">pogotowie techniczne (po ustaleniu)</div>
+            <div class="row">
+              <div class="cell">Ściany (płaszczyzny, kąty, dylatacje, wilgotność)</div>
+              <div class="cell yes">✓</div><div class="cell yes">✓</div>
+            </div>
+            <div class="row">
+              <div class="cell">Posadzki (płaszczyzny, odspojenia, dylatacje, wilgotność)</div>
+              <div class="cell yes">✓</div><div class="cell yes">✓</div>
+            </div>
+            <div class="row">
+              <div class="cell">Stolarka drzwiowa i okienna (kompletność, działanie, uszkodzenia)</div>
+              <div class="cell yes">✓</div><div class="cell yes">✓</div>
+            </div>
+            <div class="row">
+              <div class="cell">Instalacje: elektryczna, CO, wod-kan, gaz, wentylacja</div>
+              <div class="cell yes">✓</div><div class="cell yes">✓</div>
+            </div>
+            <div class="row">
+              <div class="cell">Wyposażenie i wykończenie</div>
+              <div class="cell yes">✓</div><div class="cell yes">✓</div>
+            </div>
+            <div class="row">
+              <div class="cell">Wypełnienie dokumentacji odbiorowej z deweloperem</div>
+              <div class="cell yes">✓</div><div class="cell yes">✓</div>
+            </div>
+
+            <div class="row">
+              <div class="cell">Weryfikacja dachu i trudno dostępnych miejsc</div>
+              <div class="cell no">—</div><div class="cell yes">✓</div>
+            </div>
+            <div class="row">
+              <div class="cell">Kamera termowizyjna: mostki termiczne, izolacja, wycieki</div>
+              <div class="cell no">—</div><div class="cell yes">✓</div>
+            </div>
+            <div class="row">
+              <div class="cell">Kamera inspekcyjna: instalacje niewidoczne, kanalizacja</div>
+              <div class="cell no">—</div><div class="cell yes">✓</div>
+            </div>
+            <div class="row">
+              <div class="cell">Test szczelności / próba szczelności instalacji wodnej</div>
+              <div class="cell no">—</div><div class="cell yes">✓</div>
+            </div>
+            <div class="row">
+              <div class="cell">Szczegółowy raport z dokumentacją zdjęciową (do 24h)</div>
+              <div class="cell no">—</div><div class="cell yes">✓</div>
+            </div>
+
+            <p class="tiny muted mt8">Zakres wg tabeli: „Odbiory techniczne nieruchomości – rynek pierwotny” (PDF). :contentReference[oaicite:5]{index=5}</p>
+          </div>
+
+          <div class="pricegrid">
+            <div class="pricecard">
+              <div class="pricecard__k">Rynek pierwotny • Pakiet podstawowy</div>
+              <ul class="plist">
+                <li>do 30 m² — <strong>do 500 zł</strong></li>
+                <li>do 60 m² — <strong>do 800 zł</strong></li>
+                <li>do 100 m² — <strong>do 1100 zł</strong></li>
+                <li>powyżej 100 m² — <strong>wycena indywidualna</strong></li>
+              </ul>
+              <a class="btn btn--pri btn--block" href="#kontakt">Umów odbiór</a>
+            </div>
+
+            <div class="pricecard">
+              <div class="pricecard__k">Rynek pierwotny • Pakiet rozszerzony</div>
+              <ul class="plist">
+                <li>do 30 m² — <strong>do 700 zł</strong></li>
+                <li>do 60 m² — <strong>do 1100 zł</strong></li>
+                <li>do 100 m² — <strong>do 1500 zł</strong></li>
+                <li>powyżej 100 m² — <strong>wycena indywidualna</strong></li>
+              </ul>
+              <a class="btn btn--ghost btn--block" href="tel:576601776">Zadzwoń: 576 601 776</a>
             </div>
           </div>
 
-          <div class="divider"></div>
+          <p class="tiny muted">* Ceny netto, nie uwzględniają VAT 23%. :contentReference[oaicite:6]{index=6}</p>
+        </div>
 
-          <p class="muted">
-            Chcesz ocenić mieszkanie przed podpisaniem protokołu? Zrobimy to konkretnie — z pomiarami i dokumentacją.
-          </p>
+        <!-- WTÓRNY -->
+        <div class="tabpane" id="tab-wtorny" data-pane="wtorny">
+          <div class="compare">
+            <div class="compare__head">
+              <div class="compare__h">Zakres</div>
+              <div class="compare__h">Pakiet podstawowy</div>
+              <div class="compare__h">Pakiet rozszerzony</div>
+            </div>
 
-          <a class="btn btn--primary btn--block" href="#kontakt">Umów termin</a>
+            <div class="row"><div class="cell">Ocena stanu technicznego ścian, podłóg, stolarki, instalacji</div><div class="cell yes">✓</div><div class="cell yes">✓</div></div>
+            <div class="row"><div class="cell">Sprawdzenie sprawności i jakości wyposażenia</div><div class="cell yes">✓</div><div class="cell yes">✓</div></div>
+            <div class="row"><div class="cell">Pomiar wilgotności i odspojeń</div><div class="cell yes">✓</div><div class="cell yes">✓</div></div>
+            <div class="row"><div class="cell">Wstępna analiza instalacji i widocznych usterek</div><div class="cell yes">✓</div><div class="cell yes">✓</div></div>
+            <div class="row"><div class="cell">Sprawdzenie jakości okładziny (płytki, panele, gres)</div><div class="cell yes">✓</div><div class="cell yes">✓</div></div>
+            <div class="row"><div class="cell">Ocena zabudowy meblowej, AGD i wyposażenia</div><div class="cell yes">✓</div><div class="cell yes">✓</div></div>
+
+            <div class="row"><div class="cell">Szczegółowa ocena instalacji (kamera termowizyjna, inspekcyjna)</div><div class="cell no">—</div><div class="cell yes">✓</div></div>
+            <div class="row"><div class="cell">Sprawdzenie wentylacji i grzejników</div><div class="cell no">—</div><div class="cell yes">✓</div></div>
+            <div class="row"><div class="cell">Analiza potencjalnych kosztów remontu</div><div class="cell no">—</div><div class="cell yes">✓</div></div>
+            <div class="row"><div class="cell">Dokumentacja zdjęciowa i raport (PDF)</div><div class="cell no">—</div><div class="cell yes">✓</div></div>
+            <div class="row"><div class="cell">Wstępna ocena zgodności z normami</div><div class="cell no">—</div><div class="cell yes">✓</div></div>
+
+            <p class="tiny muted mt8">Zakres wg tabeli: „Odbiory techniczne nieruchomości – rynek wtórny” (PDF). :contentReference[oaicite:7]{index=7}</p>
+          </div>
+
+          <div class="pricegrid">
+            <div class="pricecard">
+              <div class="pricecard__k">Rynek wtórny • Pakiet podstawowy</div>
+              <ul class="plist">
+                <li>do 30 m² — <strong>do 700 zł</strong></li>
+                <li>do 60 m² — <strong>do 1100 zł</strong></li>
+                <li>do 100 m² — <strong>do 1500 zł</strong></li>
+                <li>powyżej 100 m² — <strong>wycena indywidualna</strong></li>
+              </ul>
+              <a class="btn btn--pri btn--block" href="#kontakt">Umów audyt</a>
+            </div>
+
+            <div class="pricecard">
+              <div class="pricecard__k">Rynek wtórny • Pakiet rozszerzony</div>
+              <ul class="plist">
+                <li>do 30 m² — <strong>do 1100 zł</strong></li>
+                <li>do 60 m² — <strong>do 1600 zł</strong></li>
+                <li>do 100 m² — <strong>do 2000 zł</strong></li>
+                <li>powyżej 100 m² — <strong>wycena indywidualna</strong></li>
+              </ul>
+              <a class="btn btn--ghost btn--block" href="tel:576601776">Zadzwoń: 576 601 776</a>
+            </div>
+          </div>
+
+          <p class="tiny muted">* Ceny netto, nie uwzględniają VAT 23%. :contentReference[oaicite:8]{index=8}</p>
         </div>
       </div>
     </section>
 
-    <!-- Oferta -->
-    <section class="section section--alt" id="oferta">
-      <div class="container">
-        <h2 class="h2">Oferta</h2>
-        <p class="muted maxw">
-          Trzy najczęstsze potrzeby klientów. Każda usługa jest opisana jasno: co sprawdzam, co dostajesz i co dalej.
+    <!-- SPRZĘT (str. 6) -->
+    <section class="sec sec--dark" id="sprzet">
+      <div class="wrap grid grid--2">
+        <div>
+          <h2 class="h2">Działam na profesjonalnym sprzęcie</h2>
+          <p class="p muted">Pomiary i audyty prowadzone przy użyciu certyfikowanego sprzętu. :contentReference[oaicite:9]{index=9}</p>
+
+          <div class="equip">
+            <div class="equip__item"><span class="equip__dot"></span> dalmierz i miarka</div>
+            <div class="equip__item"><span class="equip__dot"></span> poziomice</div>
+            <div class="equip__item"><span class="equip__dot"></span> kątownice</div>
+            <div class="equip__item"><span class="equip__dot"></span> miernik napięcia</div>
+            <div class="equip__item"><span class="equip__dot"></span> higrometr</div>
+            <div class="equip__item"><span class="equip__dot"></span> szczelinomierz klinowy</div>
+            <div class="equip__item"><span class="equip__dot"></span> pirometr</div>
+            <div class="equip__item"><span class="equip__dot"></span> anemometr</div>
+            <div class="equip__item"><span class="equip__dot"></span> detektor gazu</div>
+            <div class="equip__item"><span class="equip__dot"></span> kamera inspekcyjna</div>
+            <div class="equip__item"><span class="equip__dot"></span> kamera termowizyjna</div>
+            <div class="equip__item"><span class="equip__dot"></span> zadymiarka</div>
+            <div class="equip__item"><span class="equip__dot"></span> pompa ciśnieniowa</div>
+            <div class="equip__item"><span class="equip__dot"></span> dron</div>
+          </div>
+
+          <div class="cta cta--left">
+            <a class="btn btn--pri" href="#kontakt">Zapytaj o termin</a>
+            <a class="btn btn--ghost" href="#materialy">Zobacz materiały</a>
+          </div>
+        </div>
+
+        <aside class="panel panel--glow">
+          <h3 class="h3">Nie zgaduję — <span class="accent">mierzę</span></h3>
+          <p class="p muted">
+            Tam, gdzie inni „na oko”, ja robię pomiar. To oszczędza czas, pieniądze i nerwy.
+          </p>
+          <ul class="bullets">
+            <li>mostki termiczne / nieszczelności</li>
+            <li>wilgoci / odspojenia</li>
+            <li>wentylacja / instalacje ukryte</li>
+          </ul>
+          <a class="btn btn--ghost btn--block" href="tel:576601776">📞 576 601 776</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- AWARIE (str. 7) -->
+    <section class="sec sec--alt" id="awarie">
+      <div class="wrap grid grid--2">
+        <div>
+          <h2 class="h2">Lokalizowanie awarii • instalacje ukryte</h2>
+          <p class="p muted">
+            Zakres: instalacje elektryczne, wod-kan, CO, wentylacja. Narzędzia: kamera termowizyjna i inspekcyjna, dron,
+            detektory gazu / wilgoci / nieszczelności. :contentReference[oaicite:10]{index=10}
+          </p>
+        </div>
+        <aside class="panel">
+          <div class="pricebig">
+            <div class="pricebig__k">Cena od</div>
+            <div class="pricebig__v"><span class="accent">400 zł*</span></div>
+            <div class="pricebig__d muted">(w zależności od złożoności i rodzaju awarii)</div>
+          </div>
+          <a class="btn btn--pri btn--block" href="#kontakt">Zgłoś awarię</a>
+          <p class="tiny muted mt8">* Ceny netto, nie uwzględniają VAT 23%. :contentReference[oaicite:11]{index=11}</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- KOORDYNACJA (str. 8–9) -->
+    <section class="sec sec--dark" id="koordynacja">
+      <div class="wrap">
+        <h2 class="h2">Nadzór i koordynacja prac remontowych</h2>
+        <p class="p muted maxw">
+          „Koordynowałem ponad 150 realizacji” — jeśli potrzebujesz kogoś, kto dopilnuje procesu i jakości. :contentReference[oaicite:12]{index=12}
         </p>
 
         <div class="cards">
           <article class="card">
-            <div class="card__icon" aria-hidden="true">🏢</div>
-            <h3 class="card__title">Odbiory deweloperskie</h3>
-            <p class="card__text">
-              Odbiór mieszkania z checklistą, pomiarami i dokumentacją usterek. Wiesz co podpisać, a czego nie.
-            </p>
-            <a class="card__link" href="#kontakt">Umów odbiór →</a>
+            <h3 class="card__t">Nadzór procesu</h3>
+            <ul class="bullets bullets--compact">
+              <li>umowa i załączniki na podstawie projektu wykonawczego</li>
+              <li>harmonogram i kontrola etapów</li>
+              <li>raporty odbiorów i konsultacje w trakcie</li>
+            </ul>
           </article>
 
           <article class="card">
-            <div class="card__icon" aria-hidden="true">🧱</div>
-            <h3 class="card__title">Koordynacja prac</h3>
-            <p class="card__text">
-              Pomagam prowadzić remont bez nerwów: harmonogram, kontrola jakości, odbiory etapów.
-            </p>
-            <a class="card__link" href="#kontakt">Zapytaj o koordynację →</a>
+            <h3 class="card__t">Koordynacja procesu</h3>
+            <ul class="bullets bullets--compact">
+              <li>pełny nadzór techniczny</li>
+              <li>logistyka dostaw materiałów</li>
+              <li>wizyty 1–2 razy w tygodniu</li>
+              <li>dokumentacja zdjęciowa i raportowanie postępów</li>
+            </ul>
           </article>
 
           <article class="card">
-            <div class="card__icon" aria-hidden="true">🛠️</div>
-            <h3 class="card__title">Pogotowie techniczne</h3>
-            <p class="card__text">
-              Szybka diagnoza awarii/usterki + plan naprawy. Konkret, bez „może”.
-            </p>
-            <a class="card__link" href="tel:576601776">Zadzwoń →</a>
+            <h3 class="card__t">Cennik (nadzór)</h3>
+            <ul class="bullets bullets--compact">
+              <li><strong>550 zł*</strong> opłata startowa (umowa, zakres, harmonogram)</li>
+              <li><strong>350 zł*</strong> za każdą wizytę (odbiór etapowy)</li>
+              <li>cena koordynacji: ustalana indywidualnie</li>
+            </ul>
+            <p class="tiny muted mt8">* Ceny netto, nie uwzględniają VAT 23%. :contentReference[oaicite:13]{index=13}</p>
           </article>
+        </div>
+
+        <div class="cta cta--center mt16">
+          <a class="btn btn--pri" href="#kontakt">Zapytaj o koordynację</a>
+          <a class="btn btn--ghost" href="tel:576601776">Zadzwoń</a>
         </div>
       </div>
     </section>
 
-    <!-- Sprzęt -->
-    <section class="section section--dark" id="sprzet">
-      <div class="container grid grid--2">
+    <!-- KONSULTACJE (str. 10) -->
+    <section class="sec sec--alt" id="konsultacje">
+      <div class="wrap grid grid--2">
         <div>
-          <h2 class="h2">Nie zgaduję — <span class="accent">Mierzę</span></h2>
-          <p class="muted">
-            To, co widać „gołym okiem”, bywa mylące. Dlatego używam narzędzi, które pozwalają wykryć problemy,
-            zanim staną się kosztowne.
+          <h2 class="h2">Konsultacje remontowe</h2>
+          <p class="p muted">
+            Nie wiesz od czego zacząć, jak dobrać materiały, zaplanować etapy? Przeanalizujemy potrzeby, wyzwania i możliwości.
+            Doradztwo techniczne przed i w trakcie remontu. :contentReference[oaicite:14]{index=14}
           </p>
-
-          <div class="equipment">
-            <div class="equipment__item">
-              <div class="equipment__badge">TERMOWIZJA</div>
-              <div class="equipment__name">Kamera termowizyjna</div>
-              <div class="equipment__desc">Wykrywa mostki termiczne, zawilgocenia i nieszczelności.</div>
-            </div>
-            <div class="equipment__item">
-              <div class="equipment__badge">POMIARY</div>
-              <div class="equipment__name">Lasery / niwelacja</div>
-              <div class="equipment__desc">Sprawdza poziomy, piony, odchyłki i geometrię.</div>
-            </div>
-            <div class="equipment__item">
-              <div class="equipment__badge">TECHNIKA</div>
-              <div class="equipment__name">Detektory / mierniki</div>
-              <div class="equipment__desc">Kontrola instalacji, punktów krytycznych i obszarów ryzyka.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="panel panel--glow">
-          <h3 class="h3">Co dostajesz</h3>
-          <ul class="bullets bullets--compact">
-            <li>Listę usterek + priorytety</li>
-            <li>Zdjęcia / notatki do protokołu</li>
-            <li>Rekomendacje napraw i kolejność działań</li>
+          <ul class="bullets">
+            <li>ocena kosztorysu, planowania zmian, zakupy materiałów</li>
+            <li>doradztwo techniczne przed i w trakcie remontu</li>
+            <li>wycena indywidualna (lub w pakiecie z odbiorem/nadzorem)</li>
           </ul>
-
-          <div class="callout">
-            <div class="callout__title">Szybki kontakt</div>
-            <a class="callout__phone" href="tel:576601776">📞 576&nbsp;601&nbsp;776</a>
-          </div>
         </div>
+        <aside class="panel">
+          <h3 class="h3">Szybki kontakt</h3>
+          <p class="p muted">Powiedz krótko: „odbiór / remont / awaria” + miasto.</p>
+          <a class="btn btn--pri btn--block" href="#kontakt">Umów konsultację</a>
+          <a class="btn btn--ghost btn--block" href="tel:576601776">📞 576 601 776</a>
+        </aside>
       </div>
     </section>
 
-    <!-- Opinie -->
-    <section class="section section--alt" id="opinie">
-      <div class="container">
-        <h2 class="h2">Opinie</h2>
-        <p class="muted maxw">
-          Tu możesz wkleić realne opinie (Google / FB). Na start zostawiamy 3 przykładowe karty.
-        </p>
-
-        <div class="cards cards--reviews">
-          <article class="card card--review">
-            <div class="review__stars" aria-label="5 gwiazdek">★★★★★</div>
-            <p class="card__text">„Bardzo konkretnie, bez lania wody. Wykryte usterki uratowały nam budżet.”</p>
-            <div class="review__meta">— Klient, odbiór mieszkania</div>
-          </article>
-
-          <article class="card card--review">
-            <div class="review__stars" aria-label="5 gwiazdek">★★★★★</div>
-            <p class="card__text">„Koordynacja remontu na plus. Terminy dopilnowane, jakość sprawdzana etapami.”</p>
-            <div class="review__meta">— Klient, koordynacja prac</div>
-          </article>
-
-          <article class="card card--review">
-            <div class="review__stars" aria-label="5 gwiazdek">★★★★★</div>
-            <p class="card__text">„Szybka diagnoza i konkretne rozwiązanie. Polecam każdemu.”</p>
-            <div class="review__meta">— Klient, pogotowie techniczne</div>
-          </article>
-        </div>
+    <!-- DODATKOWE INFO (str. 11) -->
+    <section class="sec sec--dark" id="info">
+      <div class="wrap">
+        <h2 class="h2">Dodatkowe informacje</h2>
+        <ul class="bullets">
+          <li>usługi dla klientów prywatnych i firm (deweloperzy, fliperzy, pośrednicy)</li>
+          <li>współpraca z architektem, kierownikiem budowy, inspektorem</li>
+          <li>pomiary i audyty na certyfikowanym sprzęcie</li>
+          <li>możliwość zakupu pakietu dokumentów: umowa, checklisty, harmonogram, kosztorys</li>
+          <li>podane ceny są cenami netto i nie zawierają VAT 23%</li>
+        </ul>
+        <p class="tiny muted mt8">Treść wg „Dodatkowe informacje” (PDF). :contentReference[oaicite:15]{index=15}</p>
       </div>
     </section>
 
-    <!-- Materiały / Galeria (pod filtr JS) -->
-    <section class="section section--dark" id="materialy">
-      <div class="container">
+    <!-- WSPÓŁPRACA (str. 12) -->
+    <section class="sec sec--alt" id="wspolpraca">
+      <div class="wrap">
+        <h2 class="h2">Z kim współpracuję?</h2>
+        <div class="bubbles">
+          <div class="bubble"><div class="bubble__dot"></div><div class="bubble__t">Osoby prywatne</div></div>
+          <div class="bubble"><div class="bubble__dot"></div><div class="bubble__t">Firmy i deweloperzy</div></div>
+          <div class="bubble"><div class="bubble__dot"></div><div class="bubble__t">Doradcy nieruchomości</div></div>
+          <div class="bubble"><div class="bubble__dot"></div><div class="bubble__t">Architekt</div></div>
+          <div class="bubble"><div class="bubble__dot"></div><div class="bubble__t">Kierownik budowy</div></div>
+          <div class="bubble"><div class="bubble__dot"></div><div class="bubble__t">Inspektor</div></div>
+        </div>
+        <p class="tiny muted mt8">Sekcja wg „Z kim współpracuję?” (PDF). :contentReference[oaicite:16]{index=16}</p>
+      </div>
+    </section>
+
+    <!-- MATERIAŁY (placeholder + filtrowanie JS gotowe) -->
+    <section class="sec sec--dark" id="materialy">
+      <div class="wrap">
         <h2 class="h2">Materiały</h2>
-        <p class="muted maxw">
-          Tu możesz wrzucać realizacje i przykłady usterek. Filtrowanie działa już teraz — wystarczy nadać zdjęciom kategorie.
+        <p class="p muted maxw">
+          Tu wrzucimy Twoje realizacje (usterki / wnętrza / pomiary). Filtrowanie działa już teraz — podmienisz tylko zdjęcia.
         </p>
 
         <div class="filters" role="tablist" aria-label="Filtry galerii">
@@ -280,143 +480,99 @@
           <button class="chip" data-filter="pomiary" role="tab" aria-selected="false">Pomiary</button>
         </div>
 
-        <div class="gallery" id="gallery" aria-label="Galeria materiałów">
-          <!-- Przykłady (podmień na swoje zdjęcia, najlepiej lokalne w /img) -->
-          <figure class="gallery__item" data-category="usterki">
-            <img class="gallery__img" src="https://images.unsplash.com/photo-1581579185169-43d6c5d02b7b?auto=format&fit=crop&w=1200&q=70" alt="Usterka: pęknięcie na ścianie" loading="lazy">
-            <figcaption class="gallery__cap">Usterki — dokumentacja</figcaption>
+        <div class="gallery" id="gallery">
+          <figure class="gitem" data-category="usterki">
+            <img src="https://images.unsplash.com/photo-1581579185169-43d6c5d02b7b?auto=format&fit=crop&w=1200&q=70" alt="Usterki — przykład" loading="lazy">
+            <figcaption>Usterki</figcaption>
           </figure>
-
-          <figure class="gallery__item" data-category="wnetrza">
-            <img class="gallery__img" src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=70" alt="Wnętrze: mieszkanie po remoncie" loading="lazy">
-            <figcaption class="gallery__cap">Wnętrza — efekt końcowy</figcaption>
+          <figure class="gitem" data-category="wnetrza">
+            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=70" alt="Wnętrza — przykład" loading="lazy">
+            <figcaption>Wnętrza</figcaption>
           </figure>
-
-          <figure class="gallery__item" data-category="pomiary">
-            <img class="gallery__img" src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1200&q=70" alt="Pomiary techniczne na budowie" loading="lazy">
-            <figcaption class="gallery__cap">Pomiary — nie zgaduję</figcaption>
+          <figure class="gitem" data-category="pomiary">
+            <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=1200&q=70" alt="Pomiary — przykład" loading="lazy">
+            <figcaption>Pomiary</figcaption>
           </figure>
-
-          <figure class="gallery__item" data-category="usterki">
-            <img class="gallery__img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=70" alt="Usterka: problem z wykończeniem" loading="lazy">
-            <figcaption class="gallery__cap">Usterki — szczegóły</figcaption>
+          <figure class="gitem" data-category="usterki">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=70" alt="Usterki — przykład 2" loading="lazy">
+            <figcaption>Usterki</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- Kontakt -->
-    <section class="section section--alt" id="kontakt">
-      <div class="container grid grid--2">
+    <!-- KONTAKT (str. 13) -->
+    <section class="sec sec--alt" id="kontakt">
+      <div class="wrap grid grid--2">
         <div>
-          <h2 class="h2">Kontakt</h2>
-          <p class="muted">
-            Zostaw kontakt — oddzwonię i ustalimy termin. Bez spamu, bez kruczków.
+          <h2 class="h2">Skontaktuj się ze mną</h2>
+          <p class="p muted">
+            Andrzej Kornacki — audytor techniczny, tata i koordynator remontowy. :contentReference[oaicite:17]{index=17}
           </p>
 
-          <div class="contact-box">
-            <div class="contact-box__row">
-              <span class="contact-box__label">Telefon</span>
-              <a class="contact-box__value" href="tel:576601776">576 601 776</a>
+          <div class="contactbox">
+            <div class="contactrow">
+              <span class="muted">Telefon</span>
+              <a class="contactval" href="tel:576601776">576 601 776</a>
             </div>
-            <div class="contact-box__row">
-              <span class="contact-box__label">E-mail</span>
-              <a class="contact-box__value" href="mailto:kontakt@prostyremont.com">kontakt@prostyremont.com</a>
+            <div class="contactrow">
+              <span class="muted">E-mail</span>
+              <a class="contactval" href="mailto:pr.kornacki@gmail.com">pr.kornacki@gmail.com</a>
             </div>
-            <div class="contact-box__row">
-              <span class="contact-box__label">Działam</span>
-              <span class="contact-box__value">— wpisz miasto/region —</span>
+            <div class="contactrow">
+              <span class="muted">Social</span>
+              <span class="contactval">
+                IG: <span class="accent">prosty_remont</span> • FB: <span class="accent">Prosty Remont</span>
+              </span>
             </div>
           </div>
 
-          <p class="muted small">
-            Tip: podmień e-mail wyżej na swój docelowy. Formularz możesz podpiąć do Formspree / EmailJS (bez backendu).
-          </p>
+          <div class="cta cta--left">
+            <a class="btn btn--ghost" href="tel:576601776">📞 Zadzwoń teraz</a>
+            <a class="btn btn--pri" href="#kontakt-form">Wyślij zgłoszenie</a>
+          </div>
         </div>
 
-        <div class="panel panel--form">
-          <h3 class="h3">Umów termin</h3>
+        <aside class="panel panel--form" id="kontakt-form">
+          <h3 class="h3">Zostaw kontakt — oddzwonię</h3>
+          <p class="p muted tiny">Formularz działa bez backendu: na start otwiera e-mail (mailto). Potem podepniemy Formspree/EmailJS.</p>
 
-          <!--
-            Domyślnie formularz nie wysyła nigdzie (no-backend).
-            Najprościej:
-            - Formspree: action="https://formspree.io/f/TWOJ_ID"
-            - EmailJS: obsługa w JS
-          -->
-          <form class="form" id="contactForm" autocomplete="on">
+          <form class="form" id="form">
             <label class="field">
-              <span class="field__label">Imię i nazwisko</span>
-              <input class="field__input" name="name" required placeholder="np. Jan Kowalski" />
+              <span class="field__l">Imię i nazwisko</span>
+              <input class="field__i" name="name" required placeholder="np. Jan Kowalski" />
             </label>
 
             <label class="field">
-              <span class="field__label">Numer telefonu</span>
-              <input class="field__input" name="phone" required inputmode="tel" placeholder="np. 600 000 000" />
+              <span class="field__l">Numer telefonu</span>
+              <input class="field__i" name="phone" required inputmode="tel" placeholder="np. 600 000 000" />
             </label>
 
             <label class="field">
-              <span class="field__label">Adres e-mail</span>
-              <input class="field__input" name="email" type="email" required placeholder="np. jan@domain.pl" />
+              <span class="field__l">Adres e-mail</span>
+              <input class="field__i" name="email" type="email" required placeholder="np. jan@domain.pl" />
             </label>
 
             <label class="field">
-              <span class="field__label">Wiadomość (opcjonalnie)</span>
-              <textarea class="field__input field__textarea" name="message" rows="4" placeholder="Krótko: odbiór / remont / usterka + miasto"></textarea>
+              <span class="field__l">Wiadomość (opcjonalnie)</span>
+              <textarea class="field__i field__ta" name="message" rows="4" placeholder="Krótko: odbiór / remont / awaria + miasto"></textarea>
             </label>
 
-            <button class="btn btn--primary btn--block" type="submit">
-              Wyślij zgłoszenie
-              <span class="btn__icon" aria-hidden="true">→</span>
-            </button>
+            <button class="btn btn--pri btn--block" type="submit">Wyślij <span aria-hidden="true">→</span></button>
+            <p class="tiny muted center">Klikając „Wyślij” akceptujesz Cookies i RODO (dodamy podstrony/linki w finalnym kroku).</p>
 
-            <p class="form__meta">
-              Klikając „Wyślij” akceptujesz <a href="#rodo">RODO</a> i <a href="#cookies">Cookies</a>.
-            </p>
-
-            <div class="form__toast" id="formToast" role="status" aria-live="polite"></div>
+            <div class="toast" id="toast" role="status" aria-live="polite"></div>
           </form>
-        </div>
+        </aside>
       </div>
     </section>
 
-    <!-- Stopka -->
-    <footer class="footer">
-      <div class="container footer__inner">
-        <div class="footer__left">
-          <div class="footer__brand">
-            <span class="brand__prosty">PROSTY</span><span class="brand__remont">REMONT</span>
-          </div>
-          <div class="footer__meta">© <span id="year"></span> Andrzej Kornacki</div>
-        </div>
-
-        <div class="footer__social" aria-label="Social media">
-          <a class="social" href="#" target="_blank" rel="noopener" aria-label="Instagram">
-            <!-- Instagram icon -->
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
-              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Z" stroke="currentColor" stroke-width="2"/>
-              <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z" stroke="currentColor" stroke-width="2"/>
-              <path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-            </svg>
-          </a>
-
-          <a class="social" href="#" target="_blank" rel="noopener" aria-label="Facebook">
-            <!-- Facebook icon -->
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
-              <path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v3H7v3h3v6h3v-6h3l1-3h-4v-3c0-.6.4-1 1-1Z" fill="currentColor"/>
-            </svg>
-          </a>
-
-          <a class="social" href="#" target="_blank" rel="noopener" aria-label="TikTok">
-            <!-- TikTok-ish icon -->
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
-              <path d="M14 3v12.2a3.8 3.8 0 1 1-3-3.7V8.3a7 7 0 1 0 6 6.9V7.6c1 .9 2.3 1.4 4 1.4V6.2c-2.2 0-3.6-1.2-4-3.2H14Z" fill="currentColor"/>
-            </svg>
-          </a>
-        </div>
-
-        <div class="footer__links">
-          <a id="cookies" class="footer__link" href="#">Polityka Cookies</a>
-          <a id="rodo" class="footer__link" href="#">RODO</a>
+    <footer class="ftr">
+      <div class="wrap ftr__in">
+        <div class="muted">© <span id="year"></span> Prosty Remont — Andrzej Kornacki</div>
+        <div class="ftr__links">
+          <a href="#" class="ftr__a">Polityka Cookies</a>
+          <a href="#" class="ftr__a">RODO</a>
         </div>
       </div>
     </footer>
