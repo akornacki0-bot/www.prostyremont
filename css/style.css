@@ -161,3 +161,30 @@ a{color:inherit}
     border-radius: 10px;
   }
 }
+/* ===== ACTIVE NAV ===== */
+.nav__l, .nav__cta{
+  position: relative;
+  border-radius: 12px;
+}
+
+.nav__l.is-active,
+.nav__cta.is-active{
+  color: #000 !important;
+  background: var(--acc);
+  box-shadow: 0 10px 30px rgba(255,140,0,.25);
+}
+
+/* delikatna animacja underline dla zwykłych linków */
+.nav__l::after{
+  content:"";
+  position:absolute;
+  left:10px; right:10px; bottom:-6px;
+  height:2px;
+  background: var(--acc);
+  opacity:0;
+  transform: scaleX(.6);
+  transition: .2s ease;
+  border-radius:999px;
+}
+.nav__l:hover::after{ opacity:.9; transform: scaleX(1); }
+.nav__l.is-active::after{ opacity:0; }
