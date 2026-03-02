@@ -3,63 +3,92 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Prosty Remont</title>
+  <title>Prosty Remont — Andrzej Kornacki</title>
+  <meta name="description" content="Prosty Remont — Prosta oferta. Odbiory techniczne, koordynacja remontów, lokalizowanie awarii." />
+  <meta name="theme-color" content="#121212" />
   <link rel="stylesheet" href="css/style.css" />
+  <script src="js/main.js" defer></script>
 </head>
 <body>
 
+<header class="hdr" id="hdr">
+  <div class="wrap hdr__in">
+    <a class="brand" href="#start" aria-label="Prosty Remont — start">
+      <span class="brand__a">PROSTY</span>
+      <span class="brand__b">REMONT</span>
+      <span class="brand__c">Andrzej Kornacki</span>
+    </a>
+
+    <button class="burger" id="burger" aria-controls="nav" aria-expanded="false" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a class="nav__l" href="#o-mnie">O mnie</a>
+      <a class="nav__l" href="#oferta">Oferta</a>
+      <a class="nav__l" href="#materialy">Materiały</a>
+      <a class="nav__cta" href="#kontakt">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
 <main>
 
-  <section class="pdfslide">
-    <img class="pdfimg" src="assets/pdf/pages/page-01.png" alt="">
+  <!-- START -->
+  <section class="pdfslide" id="start" aria-label="Start">
+    <img class="pdfimg" src="assets/pdf/pages/page-01.png" alt="Prosta Oferta — okładka" />
   </section>
 
-  <section class="pdfslide">
-    <img class="pdfimg" src="assets/pdf/pages/page-02.png" alt="">
+  <!-- O MNIE -->
+  <section class="pdfslide" id="o-mnie" aria-label="O mnie">
+    <img class="pdfimg" src="assets/pdf/pages/page-02.png" alt="Dlaczego robię to, co robię" />
   </section>
 
-  <section class="pdfslide">
-    <img class="pdfimg" src="assets/pdf/pages/page-03.png" alt="">
+  <!-- OFERTA (blok) -->
+  <section class="pdfslide" id="oferta" aria-label="Oferta">
+    <img class="pdfimg" src="assets/pdf/pages/page-03.png" alt="Oferta — odbiory techniczne" />
   </section>
 
-  <section class="pdfslide">
-    <img class="pdfimg" src="assets/pdf/pages/page-04.png" alt="">
+  <section class="pdfslide" aria-label="Oferta — strona 4">
+    <img class="pdfimg" src="assets/pdf/pages/page-04.png" alt="Oferta — strona 4" />
   </section>
 
-  <section class="pdfslide">
-    <img class="pdfimg" src="assets/pdf/pages/page-05.png" alt="">
+  <section class="pdfslide" aria-label="Oferta — strona 5">
+    <img class="pdfimg" src="assets/pdf/pages/page-05.png" alt="Oferta — strona 5" />
   </section>
 
-  <section class="pdfslide">
-    <img class="pdfimg" src="assets/pdf/pages/page-06.png" alt="">
+  <section class="pdfslide" aria-label="Oferta — sprzęt">
+    <img class="pdfimg" src="assets/pdf/pages/page-06.png" alt="Sprzęt" />
   </section>
 
-  <section class="pdfslide">
-    <img class="pdfimg" src="assets/pdf/pages/page-07.png" alt="">
+  <section class="pdfslide" aria-label="Oferta — awarie">
+    <img class="pdfimg" src="assets/pdf/pages/page-07.png" alt="Lokalizowanie awarii" />
   </section>
 
-  <section class="pdfslide">
-    <img class="pdfimg" src="assets/pdf/pages/page-08.png" alt="">
+  <section class="pdfslide" aria-label="Oferta — koordynacja">
+    <img class="pdfimg" src="assets/pdf/pages/page-08.png" alt="Koordynacja" />
   </section>
 
-  <section class="pdfslide">
-    <img class="pdfimg" src="assets/pdf/pages/page-09.png" alt="">
+  <section class="pdfslide" aria-label="Oferta — koordynacja 2">
+    <img class="pdfimg" src="assets/pdf/pages/page-09.png" alt="Koordynacja — szczegóły" />
   </section>
 
-  <section class="pdfslide">
-    <img class="pdfimg" src="assets/pdf/pages/page-10.png" alt="">
+  <section class="pdfslide" aria-label="Oferta — konsultacje">
+    <img class="pdfimg" src="assets/pdf/pages/page-10.png" alt="Konsultacje" />
   </section>
 
-  <section class="pdfslide">
-    <img class="pdfimg" src="assets/pdf/pages/page-11.png" alt="">
+  <!-- MATERIAŁY -->
+  <section class="pdfslide" id="materialy" aria-label="Materiały">
+    <img class="pdfimg" src="assets/pdf/pages/page-11.png" alt="Dodatkowe informacje" />
   </section>
 
-  <section class="pdfslide">
-    <img class="pdfimg" src="assets/pdf/pages/page-12.png" alt="">
+  <section class="pdfslide" aria-label="Materiały — współpraca">
+    <img class="pdfimg" src="assets/pdf/pages/page-12.png" alt="Z kim współpracuję" />
   </section>
 
-  <section class="pdfslide">
-    <img class="pdfimg" src="assets/pdf/pages/page-13.png" alt="">
+  <!-- KONTAKT -->
+  <section class="pdfslide" id="kontakt" aria-label="Kontakt">
+    <img class="pdfimg" src="assets/pdf/pages/page-13.png" alt="Kontakt" />
   </section>
 
 </main>
