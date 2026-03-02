@@ -16,7 +16,8 @@ body{
   color: var(--txt);
 
   height: 100vh;     /* zostaje */
-  overflow: hidden;  /* 🔥 KLUCZ: blokuje scroll całej strony */
+  overflow-x: hidden;
+overflow-y: auto;
   margin: 0;         /* na wszelki wypadek */
 }
 
@@ -90,30 +91,18 @@ a{color:inherit}
 
 /* ===== APP = zakładki jako panele (bez przewijania dalej) ===== */
 .app{
-  position: fixed;
-  top: var(--hdrH);
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  overflow: hidden; /* zostaje */
+  padding-top: var(--hdrH);  /* robi miejsce pod fixed header */
 }
 
 /* każdy panel to osobna zakładka */
 .panel{
-  display:none;
-  height:100%;
-}
-.panel.is-active{
   display:block;
 }
 
 /* scroll tylko w ramach aktywnego panelu */
 .panel__scroll{
-  height:100%;
-  overflow-y:auto;
-  overscroll-behavior: contain; /* nie przepycha scrolla na body */
-  scroll-snap-type: y mandatory;
+  height:auto;
+  overflow: visible;
   padding: 0;
 }
 
@@ -253,4 +242,8 @@ a{color:inherit}
     grid-template-columns: 1fr; /* na telefonie w kolumnie */
   }
   .panel__scroll{ padding-bottom: 170px; }
+}
+@media (max-width: 700px){
+  .panel__scroll{ scroll-snap-type: none; }
+  .pdfslide{ scroll-snap-align: none; scroll-snap-stop: normal; }
 }
