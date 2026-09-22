@@ -1,0 +1,21 @@
+DirectoryIndex index.html
+Options -Indexes
+RewriteEngine On
+
+# Canonical domain and HTTPS. Leave the home.pl preview hostname available.
+RewriteCond %{HTTP_HOST} ^www\.prostyremont\.com$ [NC]
+RewriteRule ^ https://prostyremont.com%{REQUEST_URI} [R=301,L,NE]
+RewriteCond %{HTTP_HOST} ^prostyremont\.com$ [NC]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://prostyremont.com%{REQUEST_URI} [R=301,L,NE]
+
+# Preserve existing links when replacing WordPress.
+RewriteRule ^oferta/?$ /#odbiory [R=301,L,NE]
+RewriteRule ^koordynacja/?$ /#remonty [R=301,L,NE]
+RewriteRule ^kontakt/?$ /#kontakt [R=301,L,NE]
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

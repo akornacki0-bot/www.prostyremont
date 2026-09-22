@@ -1,4 +1,4 @@
-# Prosty Remont — wersja robocza strony
+# Prosty Remont — strona internetowa
 
 Statyczna, responsywna strona HTML/CSS/JS. Bez procesu budowania, bibliotek zewnętrznych, formularza i analityki. `index.html` można otworzyć lokalnie lub obsłużyć dowolnym serwerem statycznym.
 
@@ -11,11 +11,17 @@ Statyczna, responsywna strona HTML/CSS/JS. Bez procesu budowania, bibliotek zewn
 
 Galeria przed/po została usunięta na prośbę właściciela. Powróci po dostarczeniu nowych zdjęć. Pojedyncze zdjęcie kuchni w sekcji koordynacji pozostaje ilustracją usługi.
 
-## Przed wdrożeniem
+## Publikacja
 
-To osobna wersja robocza, nie publikacja pod domeną. Aktualna domena obsługuje WordPress na home.pl; GitHub Pages wskazuje main i domenę niestandardową, ale zgłasza problem konfiguracji domeny/HTTPS. Samo scalenie tej zmiany nie potwierdza wdrożenia na home.pl.
+Strona została opublikowana 22.09.2026 pod https://prostyremont.com/ na dotychczasowym hostingu home.pl. Pliki strony znajdują się w osobnym katalogu `/public_html/prostyremont-20260922`; domena wskazuje `/prostyremont-20260922` w trybie podkatalogu bez separacji serwisu. Aktualizacja GitHuba nie wdraża automatycznie zmian na home.pl.
 
-Przed publikacją należy ustalić miejsce hostowania, wykonać kopię obecnej strony i skonfigurować przekierowania dotychczasowych adresów (co najmniej `/oferta/`, `/koordynacja/`, `/kontakt/`) na odpowiednie sekcje. Zweryfikować DNS, certyfikat HTTPS i indeksowanie już po wdrożeniu. Nie usuwać obecnego WordPressa ani jego danych w ramach przeglądu projektu.
+Publikowane pliki: `index.html`, `css/style.css`, `js/main.js`, `assets/favicon.svg`, `assets/web/*.webp`, `robots.txt`, `sitemap.xml` i `.htaccess`. Nie przesyłać materiałów źródłowych, README ani CNAME na hosting.
+
+Zweryfikowano przekierowania `/oferta/` → `/#odbiory`, `/koordynacja/` → `/#remonty`, `/kontakt/` → `/#kontakt` oraz HTTP/www → https://prostyremont.com/. HTTPS działa. Mapa strony i robots.txt są przygotowane do indeksowania; obecność w wynikach wyszukiwarki zależy od jej ponownego odwiedzenia strony.
+
+Dotychczasowy WordPress i baza danych pozostały nienaruszone. Powrót do poprzedniej strony: w panelu home.pl przywrócić lokalizację WWW domeny do `/autoinstalator/wordpress1`. Na hostingu są automatyczne kopie plików i bazy; dodatkowo rozpoczęto kopiowanie starego katalogu do `/prostyremont-kopia-20260922`, ale pełnego zakończenia tej dodatkowej kopii nie potwierdzono po błędzie połączenia. Nie traktować jej jako zweryfikowanej kopii.
+
+Podczas wdrożenia wyłączono opcjonalny HTTP/3 + QUIC po błędach `ERR_QUIC_PROTOCOL_ERROR` w WebFTP. HTTPS pozostał aktywny. Nie zmieniano DNS ani obsługi poczty.
 
 ## Sprawdzanie
 
